@@ -3,48 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sign in for a new account at YourWebsite. Register with your email and password."
+    />
+    <meta
+      name="keywords"
+      content="sign in, create account, registration, email, password"
+    />
     <title>Sign In</title>
   </head>
   <body>
-    <div>
-      <h2>Sign in</h2>
-      <p>If you don't have an account register</p>
-      <p>You can <a href="signUp.html">Sign up here!</a></p>
+    <section>
+      <h1>Sign In</h1>
+      <p>
+        If you already have an account, <a href="signUp.html">Sign in here!</a>
+      </p>
       <form>
-        <div>
-          <label for="email">Email</label> <br />
-          <input
-            type="email"
-            name="emaill"
-            id="email"
-            placeholder="Enter your email account"
-          />
-        </div>
+        <label for="email">Email</label><br />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Enter your email account"
+          required
+        /><br /><br />
+        <label for="password">Password</label><br />
+        <input
+          type="password"
+          name="password"
+          id="password"
+          minlength="8"
+          placeholder="Enter your password"
+          required
+        /><br /><br />
+        <input type="submit" value="Login" />
         <br />
-        <div>
-          <label for="password">Password</label> <br />
-          <input
-            type="password"
-            name="password"
-            id="confirm_password"
-            minlength="8"
-            placeholder="Enter your password"
-          />
-        </div>
-        <br />
-        <div>
-          <input type="submit" value="Login" />
-        </div>
-        <div>
-          <input type="checkbox" name="checkbox" id="checkbox" />remember me
-          <a href="">Forget Password</a>
-        </div>
-
-        <p>or continue with</p>
-        <a href="">facebook</a>
-        <a href="">apple</a>
-        <a href="">google</a>
+        <input type="checkbox" name="checkbox" id="checkbox" />remember me
+        <a href="#">forget password</a>
       </form>
-    </div>
+      <p>or continue with</p>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-apple"></i></a>
+      <a href="#"><i class="fas fa-envelope"></i></a>
+    </section>
   </body>
 </html>

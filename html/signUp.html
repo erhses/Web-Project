@@ -1,53 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign_Up</title>
+    <meta
+      name="description"
+      content="Sign up for a new account at YourWebsite. Register with your email and password."
+    />
+    <meta
+      name="keywords"
+      content="sign up, create account, registration, email, password"
+    />
+    <title>Sign Up</title>
   </head>
   <body>
-    <div>
-      <h2>Sign up</h2>
-      <p>If you already have an account register</p>
-      <p>You can <a href="signIn.html">Sign in here!</a></p>
-        <label for="email">Email</label> <br />
+    <section>
+      <h1>Sign Up</h1>
+      <p>
+        If you already have an account, <a href="signIn.html">Sign in here!</a>
+      </p>
+      <form>
+        <label for="email">Email</label><br />
         <input
           type="email"
-          name="emaill"
+          name="email"
           id="email"
           placeholder="Enter your email account"
-        /><br><br>
-        <label for="username">Username</label> <br>
+          required
+        /><br /><br />
+        <label for="username">Username</label><br />
         <input
           type="text"
-          name="name"
-          id="name"
-          placeholder="Enter your Username"/>
-          <br><br>
-        <label for="password">Password</label> <br />
-        <input
-          type="password"
-          name="password"
-          id="confirm_password"
-          minlength="8"
-          placeholder="Enter your password"
+          name="username"
+          id="username"
+          placeholder="Enter your Username"
           required
-        /><br><br>
-        <br />
-        <label for="password">Confirm Password</label> <br />
+        /><br /><br />
+        <label for="password">Password</label><br />
         <input
           type="password"
           name="password"
           id="password"
           minlength="8"
+          placeholder="Enter your password"
+          required
+        /><br /><br />
+        <label for="confirm_password">Confirm Password</label><br />
+        <input
+          type="password"
+          name="confirm_password"
+          id="confirm_password"
+          minlength="8"
           placeholder="Confirm your password"
-        /><br><br>
+          required
+        /><br /><br />
         <input type="submit" value="Sign up" />
-        <p>or continue with</p>
-        <a href=""><i class="fa-brands fa-facebook"></i></a>
-        <a href=""><i class="fa-brands fa-apple"></i></a>
-        <a href=""><i class="fa-solid fa-envelope"></i></a>
+      </form>
+      <p>or continue with</p>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-apple"></i></a>
+      <a href="#"><i class="fas fa-envelope"></i></a>
     </section>
-    </div>
   </body>
 </html>
