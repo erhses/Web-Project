@@ -1,0 +1,11 @@
+nav{
+    display: flex;
+    align-items: center;
+    background-color: #252525;
+    justify-content: space-evenly;
+}
+
+area{
+    background-color: grey;
+    z-index:1;
+}
