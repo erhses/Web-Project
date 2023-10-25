@@ -12,8 +12,11 @@
       content="sign in, create account, registration, email, password"
     />
     <title>Sign In</title>
+    <link rel="stylesheet" href="css/signin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
-  <body>
+
+  <>
     <section>
       <h1>Sign In</h1>
       <p>
@@ -21,7 +24,7 @@
       </p>
       <form>
         <label for="email">Email</label><br />
-        <input
+        <input class="inputt"
           type="email"
           name="email"
           id="email"
@@ -29,23 +32,24 @@
           required
         /><br /><br />
         <label for="password">Password</label><br />
-        <input
+        <input class="inputt"
           type="password"
           name="password"
           id="password"
           minlength="8"
           placeholder="Enter your password"
           required
-        /><br /><br />
-        <input type="submit" value="Login" />
-        <br />
+        />
+        <br /><br />
         <input type="checkbox" name="checkbox" id="checkbox" />remember me
         <a href="#">forget password</a>
+        <br /><br />
+        <input class="button" type="submit" value="Login" />
       </form>
       <p>or continue with</p>
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-apple"></i></a>
-      <a href="#"><i class="fas fa-envelope"></i></a>
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-apple"></i></a>
+      <a href="#"><i class="fa fa-envelope"></i></a>
     </section>
   </body>
 </html>

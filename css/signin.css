@@ -1,0 +1,60 @@
+body {
+  background-image: url(/images/signin\ img.png);
+  background-size: cover;
+  background-position: center;
+  background-position-x: left;
+  margin: 0;
+  margin-top: 50px;
+}
+
+section {
+  width: 500px;
+  margin: auto;
+  padding: 20px;
+  background-color: whitesmoke;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  
+  margin-bottom: 10px;
+  display: grid;
+}
+
+.inputt {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+input:checkbox {
+  margin-right: 10px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.fa {
+  font-size: 20px;
+  margin-right: 50px;
+  position: grid;
+}
