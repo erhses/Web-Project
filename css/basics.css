@@ -1,3 +1,4 @@
+
 body{
     font-family: 'nunito';
     padding: 1px;
@@ -8,6 +9,10 @@ nav{
     align-items: center;
     background-color: #252525;
     width: 98vw;
+}
+.nav-items{
+    display: flex;
+    justify-content: space-evenly;
 }
 nav section{
     padding-left: 10vw;
@@ -33,3 +38,10 @@ header{
     height: 60vh;
     width: 98vw;
 }
+header h1{
+    text-align: center;
+    font-family: 'Lobster Two', sans-serif;
+    color: white;
+}
+
+
