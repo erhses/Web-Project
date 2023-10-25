@@ -8,6 +8,7 @@
     <meta name="theme-color" content="#9B8DF1"/>
     <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
     <link rel="stylesheet" href="css/basics.css">
+    <script src="script.js"></script>
    <style>
   @import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap');
 </style>
@@ -15,25 +16,24 @@
  </head>
  <body style="background-color: white;">  
    <header>
-      <nav id="nav-bar">
-         <section href="index.html">
-            <img src="/images/image-removebg-preview.png" alt="" style="width: 10vw;">
+      <nav>
+         <section>
+            <a href="index.html"><img src="/images/image-removebg-preview.png" alt="" style="width: 10vw;"></a>
             </section>
-            <section class="nav-items">
-               <ul>
-                  <li> <a class="current" href="index.html"> Home </a></li>
+               <ul class="nav-items">
+                  <li> <a class="current" href="test.html"> Home </a></li>
                   <li> <a href="map.html"> Explore </a></li>
-                  <li> <a href="services.html"> Services &#x25BE</a>
-                     <ul class="dropdown">
-                        <li>Car Rent</li>
-                        <li>Hotels</li>
-                        <li>Babysitting</li>
+                  <li class="dropdown"> <a href="services.html"> Services &#x25BE</a>
+                     <ul class="dropdown-content">
+                        <li><a href="#">Car Rent</a></li>
+                        <li><a href="#">Hotels</a></li>
+                        <li><a href="#">Babysitting</a></li>
                   </ul>
                </li>
                <li> <a href="home.html">Contact Us </a></li>
-               <li> <a href="signIn.html">Login </a></li>   
+               <li class="dropdown"> <a href="signIn.html">Login </a></li>   
                <!-- <li> <img src="" alt=""> -->
-                  <ul class="dropdown">
+                  <ul class="dropdown-content">
                      <li><a href="account.html">Profile</a></li>
                      <li><a href="signIn.html">Sign In</a></li>
                      <li><a href="signUp.html">Sign Up</a></li>
@@ -41,7 +41,11 @@
                   </ul>
                </li>
             </ul>
-         </section>
+            <div class="hamburger-menu">
+               <div class="bar"></div>
+               <div class="bar"></div>
+               <div class="bar"></div>
+           </div>
          </nav>
          <h1>"Explore, Dream, Discover: Your Ultimate Travel Companion."</h1>
       </header>
