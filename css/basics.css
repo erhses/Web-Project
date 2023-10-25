@@ -1,21 +1,35 @@
+body{
+    font-family: 'nunito';
+    padding: 1px;
+}
+
 nav{
     display: flex;
     align-items: center;
     background-color: #252525;
+    width: 98vw;
 }
 nav section{
     padding-left: 10vw;
 }
 nav ul{
+    width: max-content;
     display: flex;
     list-style-type: none;
-
+    justify-content: space-between;
+    text-align: center;
 }
-nav ul li{
+ul li ul{
+    visibility: hidden;
 }
 nav a{
     text-decoration: none;
+    color: white;
 }
-li ul{
-    display: none;
+header{
+    background-image: url("/images/hero.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 60vh;
+    width: 98vw;
 }
