@@ -2,10 +2,20 @@ nav{
     display: flex;
     align-items: center;
     background-color: #252525;
-    justify-content: space-evenly;
 }
+nav section{
+    padding-left: 10vw;
+}
+nav ul{
+    display: flex;
+    list-style-type: none;
 
-area{
-    background-color: grey;
-    z-index:1;
+}
+nav ul li{
+}
+nav a{
+    text-decoration: none;
+}
+li ul{
+    display: none;
 }
