@@ -12,6 +12,7 @@ nav{
 .nav-items{
     display: flex;
     justify-content: space-evenly;
+    width: 100vw;
 }
 nav section{
     padding-left: 10vw;
