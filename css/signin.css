@@ -1,16 +1,14 @@
 body {
+  display: flex;
   background-image: url(/images/signin\ img.png);
   background-size: cover;
-  background-position: center;
-  background-position-x: left;
-  margin: 0;
-  margin-top: 50px;
+  margin: 50px 50px 50px 50px;
 }
 
 section {
-  width: 500px;
+  width: 400px;
   margin: auto;
-  padding: 20px;
+  padding: 50px;
   background-color: whitesmoke;
   border-radius: 8px;
   box-sizing: border-box;
@@ -21,7 +19,6 @@ form {
 }
 
 label {
-  
   margin-bottom: 10px;
   display: grid;
 }
@@ -31,7 +28,6 @@ label {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 16px;
   margin-bottom: 10px;
 }
 
@@ -40,7 +36,7 @@ label {
   color: white;
   padding: 10px 20px;
   border-radius: 4px;
-  font-size: 16px;
+  width: 310px;
   cursor: pointer;
 }
 
@@ -49,12 +45,19 @@ input:checkbox {
 }
 
 a {
-  color: #007bff;
-  text-decoration: none;
+  color: #009dff;
+}
+.forget {
+  position: absolute;
+  right: 550px;
 }
 
 .fa {
+  display: flex;
+  margin-right: 10%;
+  padding-left: 50px;
   font-size: 20px;
-  margin-right: 50px;
-  position: grid;
+}
+p {
+  text-align: center;
 }
