@@ -80,10 +80,14 @@ nav img{
         display: block;
         background-color: #252525;
     }
+    header{
+        background-image: none;
+    }
 }
 header{
     background-image: url("/images/hero.jpg");
     background-size: cover;
+    background-position: absolute;
     background-repeat: no-repeat;
     height: 60vh;
     width: 98vw;
@@ -92,5 +96,6 @@ header h1{
     text-align: center;
     font-family: 'Lobster Two', sans-serif;
     color: white;
+    
 }
 
