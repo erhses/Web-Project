@@ -9,6 +9,10 @@ header{
   flex-direction: column;
   width: 98vw;
 }
+
+main{
+  color: black;
+}
 header h1{
   text-align: center;
   font-family: 'Lobster Two', sans-serif;
@@ -23,7 +27,9 @@ area:hover {
   transform: scale(1.2);
 }
 
+.popular-container{
+  display: flex;
+}
 
-main{
-  color: black;
+.popular-container article{
 }
