@@ -1,8 +1,9 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const navLinks = document.querySelector('.nav-items');
+document.querySelectorAll('area').forEach(function(area) {
+    area.addEventListener('mouseover', function() {
+        this.style.transform = 'scale(1.2)';
+    });
 
-    hamburgerMenu.addEventListener('click', function() {
-        navLinks.classList.toggle('active');
+    area.addEventListener('mouseout', function() {
+        this.style.transform = 'scale(1)';
     });
 });
