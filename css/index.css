@@ -137,7 +137,7 @@ area:hover {
 @media (max-width: 480px){
   .rev-card:nth-child(3),
   .rev-card:nth-child(2){
-    display: none
+    display: none;
   }
 }
 .review{
