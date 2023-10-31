@@ -1,9 +1,9 @@
-document.querySelectorAll('area').forEach(function(area) {
-    area.addEventListener('mouseover', function() {
-        this.style.transform = 'scale(1.2)';
-    });
-
-    area.addEventListener('mouseout', function() {
-        this.style.transform = 'scale(1)';
-    });
-});
+document.addEventListener('DOMContentLoaded', function() {
+    function toggleNav() {
+      var navItems = document.querySelector('.nav-items');
+      navItems.classList.toggle('active');
+    }
+  
+    document.querySelector('.hamburger-menu').addEventListener('click', toggleNav);
+  });
+  
