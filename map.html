@@ -5,35 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Discover the perfect destination for your next adventure with our travel planner. Create personalized itineraries, find the best accommodations, and make unforgettable memories. Start planning today!">
     <title>Map</title>
+    <link rel="stylesheet" href="/css/basics.css">
+    <link rel="stylesheet" href="/css/map.css">
+    <script src="script.js"></script>
 </head>
 <body style="background-color: white;">
-    <header>
-        <nav>
-            <img src="/images/image-removebg-preview.png" alt="" style="width: 10vw;">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="map.html">Explore</a></li>
-                <li>
-                    <a href="services.html">Services &#x25BE</a>
-                    <ul>
-                        <li>Car Rent</li>
-                        <li>Hotels</li>
-                        <li>Babysitting</li>
+    <nav>
+        <section>
+           <a href="index.html"><img src="/images/image-removebg-preview.png" alt="" style="width: 10rem;"></a>
+        </section>
+        <ul class="nav-items">
+           <li> <a class="current" href="test.html"> Home </a></li>
+                    <li> <a href="map.html"> Explore </a></li>
+                    <li class="dropdown"> <a href="services.html">Services</a>
+                    </li>
+                    <li> <a href="home.html">Contact Us </a></li>
+                    <li class="dropdown"> <a href="signIn.html">Login </a></li>   
+                    <ul class="dropdown-content">
+                       <li><a href="account.html">Profile</a></li>
+                       <li><a href="signIn.html">Sign In</a></li>
+                       <li><a href="signUp.html">Sign Up</a></li>
+                       <li>Sign Out</li>
                     </ul>
-                </li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li>
-                    <a href="signIn.html">Login</a>
-                    <ul>
-                        <li><a href="account.html"></a>Profile</li>
-                        <li><a href="signIn.html"></a>Sign In</li>
-                        <li><a href="signUp.html"></a>Sign Up</li>
-                        <li>Sign Out</li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </header>
+                 </li>
+              </ul>
+              <div class="hamburger-menu">
+                 <div class="bar"></div>
+                 <div class="bar"></div>
+                 <div class="bar"></div>
+              </div>
+           </nav>
     <main>
         <h1>Selected location</h1>
         <ul>
@@ -60,13 +61,6 @@
         <img src="/images/destination-map.png" alt="mgl-dest-map" width="711" height="354" usemap="#Map" border="0" />
     </main>   
         <footer id="footer">
-            <div class="footer-one">
-                <h3>Санал хүсэлт үлдээх хэсэг</h3>
-                <input type="text" name="text" id="text" placeholder="Enter your name">
-                <input type="email" name="email" id="email" placeholder="Enter your email">
-                <textarea name="textarea" id="textarea" cols="30" rows="10" placeholder="Enter your comment"></textarea>
-                <button type="submit">submit</button>
-            </div>
             <div class="footer-two">
                 <h3>About Us</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptas dolorum vitae neque, 

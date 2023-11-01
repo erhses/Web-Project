@@ -1,5 +1,6 @@
 
 :root{
+    --primary : #252525;
     --secondary : #9B8DF1;
 }
 body{
@@ -10,7 +11,7 @@ nav{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background-color: #252525;
+    background-color: var(--primary);
     width: 98vw;
     position: sticky;
 }
@@ -34,7 +35,7 @@ nav img{
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #252525;
+    background-color:var(--primary);
     z-index: 1;
     width: 150px;
 }
@@ -81,7 +82,7 @@ nav img{
     .dropdown-content {
         position: static;
         display: block;
-        background-color: #252525;
+        background-color: var(--primary);
     }
 
     header {
@@ -91,4 +92,16 @@ nav img{
     header h1{
         color: black;
     }
+}
+footer{
+    margin: 8em;
+    display: flex;
+    border-top: 2px solid var(--secondary);
+}   
+.footer-two{
+    max-width: 30%;
+}
+
+.footer-three{
+    max-width: 70%;
 }
