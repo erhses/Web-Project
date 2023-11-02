@@ -12,43 +12,49 @@
       content="sign in, create account, registration, email, password"
     />
     <title>Sign In</title>
-    <link rel="stylesheet" href="css/signin.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/signin.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body>
-    <section>
+    <section class="section">
       <h1>Sign In</h1>
-      <p>
-        Don't have an account? <a href="signUp.html">Sign up here!</a>
-      </p>
-      <form>
+      <p>Don't have an account? <a href="signUp.html">Sign up here!</a></p>
+      <form class="form">
+        <div class="sda">
         <label for="email">Email</label><br />
-        <input class="inputt"
+        <input   
           type="email"
           name="email"
-          id="email"
-          placeholder="Enter your email account"
           required
         /><br /><br />
+      </div>
+      <div class="sda">
         <label for="password">Password</label><br />
-        <input class="inputt"
+        <input
           type="password"
-          name="password"
-          id="password"
+          name password"
           minlength="8"
-          placeholder="Enter your password"
           required
         />
         <br /><br />
+      </div>
         <input type="checkbox" name="checkbox" id="checkbox" />remember me
         <a class="forget" href="#">forget password</a>
         <br /><br />
         <input class="button" type="submit" value="Login" />
+      
       </form>
       <p>or continue with</p>
       <a href="#"><i class="fa fa-facebook"></i></a>
       <a href="#"><i class="fa fa-apple"></i></a>
       <a href="#"><i class="fa fa-envelope"></i></a>
     </section>
+    <script>
+      
+    </script>
   </body>
 </html>
