@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function addToCart() {
     console.log("Added to cart:", cart);
-    alert("added");
+    // alert("added");
   }
 
   document.getElementsByClassName("card__button").addEventListener("click", addToCart());
