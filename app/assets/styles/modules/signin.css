@@ -1,0 +1,6 @@
+.login {
+    background-color: red;
+    &__title {
+        background-color: aqua;
+    }
+}

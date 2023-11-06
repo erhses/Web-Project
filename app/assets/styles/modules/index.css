@@ -3,12 +3,11 @@
   --secondary : #9B8DF1;
 }
 header{
-  background-image: url("/images/hero.jpg");
   background-size: cover;
   background-position: absolute;
   background-repeat: no-repeat;
   height: fit-content;
-  display: flex;
+  display: flex; 
   align-items: center;
   flex-direction: column;
   width: 98vw;
