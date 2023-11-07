@@ -2,23 +2,22 @@
   --primary : #252525;
   --secondary : #9B8DF1;
 }
-
-.header-img{
-  max-width: 100%;
-  background-size: cover;
-  position: absolute;
+.header {
+  background-image: url('/app/assets/images/header.png');
+  margin: 0;
+  height: 670px;
 }
-.h1oo{
-  padding: 200px;
-  position: relative;
+
+.h1{
+  margin: 150px;
   text-align: center;
   font-family: 'Lobster Two', sans-serif;
   color: #fff; 
 }
 
 area {
-  
-  color: #252525;
+  background-color: #252525;
+  position: absolute;
   transition: transform 0.2s ease;
 }
 
