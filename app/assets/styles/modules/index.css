@@ -14,6 +14,17 @@
     color: #fff;
   }
 }
+.services {
+  background-image: url('/app/assets/images/roadtrip\ 1.png');
+  margin: 0;
+  height: 680px;
+  &__h1 {
+    margin: 250px;
+    text-align: center;
+    font-family: 'Lobster Two', sans-serif;
+    color: #231c1c;
+  }
+}
 
 area {
   background-color: #252525;
