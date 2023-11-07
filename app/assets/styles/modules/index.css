@@ -2,24 +2,23 @@
   --primary : #252525;
   --secondary : #9B8DF1;
 }
-header{
-  background-size: cover;
-  background-position: absolute;
-  background-repeat: no-repeat;
-  height: fit-content;
-  display: flex; 
-  align-items: center;
-  flex-direction: column;
-  width: 98vw;
-}
 
-header h1{
+.header-img{
+  max-width: 100%;
+  background-size: cover;
+  position: absolute;
+}
+.h1oo{
+  padding: 200px;
+  position: relative;
   text-align: center;
   font-family: 'Lobster Two', sans-serif;
-  color: white; 
+  color: #fff; 
 }
 
 area {
+  
+  color: #252525;
   transition: transform 0.2s ease;
 }
 
