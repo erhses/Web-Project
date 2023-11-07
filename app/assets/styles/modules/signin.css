@@ -1,6 +1,68 @@
 .login {
-    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: aqua;
+    width: 30%;
+    border-radius: 20px;
+
     &__title {
-        background-color: aqua;
+        margin: 15px;
+        margin-bottom: 0;
+        background-color: yellow;
     }
+
+    &__description {
+        margin: 15px;
+        margin-bottom: 0;
+        background-color: blanchedalmond;
+    }
+
+    &__form {
+        margin: 15px;
+        display: flex;
+        flex-direction: column;
+
+        &__label {
+            position: relative;
+
+            .input {
+                background-color: #333;
+                color: #fff;
+                width: 100%;
+                padding: 20px 05px 05px 10px;
+                outline: 0;
+                border: 1px solid rgba(105, 105, 105, 0.397);
+                border-radius: 10px;
+            }
+
+            .input + span {
+                background-color: yellow;
+            }
+
+            .input + span {
+                color: rgba(255, 255, 255, 0.5);
+                position: absolute;
+                left: 10px;
+                top: 0px;
+                font-size: 0.9em;
+                cursor: text;
+                transition: 0.3s ease;
+            }
+
+            .input:placeholder-shown + .span {
+                top: 12.5px;
+                font-size: 0.9em;
+            }
+
+            .input:focus+.span,
+            .input:valid+.span {
+                color: #00bfff;
+                top: 0px;
+                font-size: 0.7em;
+                font-weight: 600;
+            }
+        }
+    }
+
 }

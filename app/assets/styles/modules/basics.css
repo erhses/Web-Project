@@ -9,7 +9,7 @@ body {
 
 .navigation {
     z-index: 1;
-    top: 20px;
+    top: 50px;
     margin: 0 40px;
     display: flex;
     position: relative;
@@ -20,7 +20,7 @@ body {
     border-radius: 20px;
 
     &__img {
-        padding-left: 10vw;
+        padding-left: 50px;
     }
 
     &__items {

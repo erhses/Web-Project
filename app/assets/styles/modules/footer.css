@@ -1,6 +1,5 @@
-
 .footer {
-    margin: 8em;
+    margin: 20px;
     display: flex;
     border-top: 2px solid var(--secondary);
     flex-direction: row;
