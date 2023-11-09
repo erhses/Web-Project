@@ -15,7 +15,7 @@
   }
 }
 .services {
-  background-image: url('/app/assets/images/roadtrip\ 1.png');
+  background-image: url('/app/assets/images/roadtrip1.png');
   margin: 0;
   height: 680px;
   &__h1 {

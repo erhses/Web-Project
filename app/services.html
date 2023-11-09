@@ -9,9 +9,6 @@
     content="Discover the perfect destination for your next adventure with our travel planner. Create personalized itineraries, find the best accommodations, and make unforgettable memories. Start planning today!">
   <meta name="theme-color" content="#9B8DF1" />
   <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
-  <link rel="stylesheet" href="css/index.css">
-  <link rel="stylesheet" href="css/basics.css">
-  <script src="script.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap');
   </style>
@@ -31,14 +28,16 @@
         <li class="dropdown"> <a href="services.html">Services</a>
         </li>
         <li> <a href="home.html">Contact Us </a></li>
-        <li class="dropdown"> <a href="signIn.html">Login </a></li>
-        <ul class="dropdown-content">
-          <li><a href="account.html">Profile</a></li>
-          <li><a href="signIn.html">Sign In</a></li>
-          <li><a href="signUp.html">Sign Up</a></li>
-          <li>Sign Out</li>
-        </ul>
-        </li>
+        <div class="navigation__items__dropdown">
+          <li class="dropbtn"> Login </li>
+          <ul class="dropdown-content">
+            <li><a href="account.html">Profile</a></li>
+            <li><a href="signIn.html">Sign In</a></li>
+            <li><a href="signUp.html">Sign Up</a></li>
+            <li>Sign Out</li>
+        </div>
+      </ul>
+      </li>
       </ul>
       <div class="hamburger-menu">
         <div class="bar"></div>
@@ -122,7 +121,7 @@
       <img src="assets/images/toyota-car.png" alt="toyota-car">
       <section class="cCard__container">
         <div>
-          
+
         </div>
         <div></div>
         <div></div>
@@ -199,8 +198,8 @@
     <div class="footer">
       <div class="footer__one">
         <h3>Санал хүсэлт үлдээх хэсэг</h3>
-        <input type="email" name="email" placeholder="Enter your email">
-        <textarea name="textarea" id="textarea" cols="30" rows="10" placeholder="Enter your comment"></textarea><br>
+        <input class="input" type="email" name="email" placeholder="Enter your email">
+        <textarea name="textarea" class="textarea" cols="30" rows="10" placeholder="Enter your comment"></textarea><br>
         <button type="submit">submit</button>
       </div>
       <div class="footer__two">
@@ -218,7 +217,7 @@
     </div>
     <p class="footer__end">&copy; 2023 copyright</p>
   </footer>
-
+  <script src="bundled.js"></script>
 </body>
 
 </html>

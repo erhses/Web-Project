@@ -28,9 +28,16 @@ body {
         list-style: none;
         justify-content: space-evenly;
         width: 90vw;
-        
+        overflow: hidden;
+
         li {
             margin: 0 10px;
+            float: left;
+            font-size: 16px;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            background: yellow;
         }
 
         a {
@@ -38,26 +45,56 @@ body {
             color: white;
             position: relative;
         }
-    }
-
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: var(--primary);
-        z-index: 1;
-        width: 150px;
-        li {
-            display: block;
-            padding: 10px;
+        &__dropdown {
+            overflow: hidden;
+            &__dropdown:hover .dropbtn{
+                background-color: red;
+            }
         }
     }
 
 }
 
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
 
-.nav-links li:hover .dropdown-content {
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content li {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content li:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
     display: block;
 }
+
+
 
 .hamburger-menu {
     display: none;

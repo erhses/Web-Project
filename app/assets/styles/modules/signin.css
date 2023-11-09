@@ -3,16 +3,21 @@
     flex-direction: column;
     justify-content: center;
     background-color: aqua;
+    margin: auto;
+    margin-top: 140px;
     width: 30%;
     border-radius: 20px;
+    text-align: center;
 
     &__title {
+        text-align: start;
         margin: 15px;
         margin-bottom: 0;
         background-color: yellow;
     }
 
     &__description {
+        text-align: start;
         margin: 15px;
         margin-bottom: 0;
         background-color: blanchedalmond;
@@ -20,23 +25,39 @@
 
     &__form {
         margin: 15px;
-        display: flex;
-
+        text-align: start;
         &__label {
             position: relative;
+        }
 
-            .input {
-                background-color: #333;
-                color: #fff;
+        &__div {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+
+            &__forget{
+                margin-left: auto;
+                text-decoration: none;
+            }
+
+            &__button{
                 width: 100%;
-                padding: 20px 05px 05px 10px;
-                outline: 0;
-                border: 1px solid rgba(105, 105, 105, 0.397);
-                border-radius: 10px;
+                border-radius: 1.5rem;
+                border: none;
+                background-color: blue;
+                padding: 0.5rem;
+                color: white;
             }
         }
     }
-}
-.login__form__div{
-    justify-content: space-between;
+
+    &__icons{
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+        
+        a{
+            padding: 1rem;
+        }
+    }
 }
