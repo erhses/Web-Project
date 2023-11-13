@@ -1,6 +1,6 @@
 .index {
     background-image: url(/docs/4b5a12276f2b11f9659c.png);
-    height: 670px;
+    height: 80vh;
     margin: 0;
   }
   .index__h1 {
@@ -30,9 +30,9 @@
   }
   .card {
     display: flex;
+    flex-wrap: wrap;
   }
   .card__image {
-    background: #f5f5f5;
     border: 2px solid #c3c6ce;
     border-radius: 20px;
     height: 254px;
@@ -120,12 +120,17 @@
     .review__card:nth-child(3) {
       display: none;
     }
+    .card__image__button{
+      opacity: 1;
+      transform: translate(-50%, 50%);
+    }
   }
   @media (max-width: 480px) {
     .review__card:nth-child(2),
     .review__card:nth-child(3) {
       display: none;
     }
+
   }
   .review {
     display: flex;
