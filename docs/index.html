@@ -9,14 +9,13 @@
         content="Discover the perfect destination for your next adventure with our travel planner. Create personalized itineraries, find the best accommodations, and make unforgettable memories. Start planning today!">
     <meta name="theme-color" content="#9B8DF1" />
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/basics.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <script src="/docs/js/main.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap');
     </style>
     <script defer="defer" src="main.2281425b0d28644fb548.js"></script>
-    <link href="styles.2281425b0d28644fb548.css" rel="stylesheet">
 </head>
 
 <body style="background-color: white;">
@@ -24,25 +23,30 @@
         <nav class="navigation">
             <section><a href="index.html"><img class="navigation__img" src="assets/images/image-removebg-preview.png"
                         alt="" style="width: 10rem;"></a></section>
-            <ul class="navigation__items">
-                <li><a class="current" href="test.html">Home</a></li>
-                <li><a href="map.html">Explore</a></li>
-                <li class="dropdown"><a href="services.html">Services</a></li>
-                <li><a href="home.html">Contact Us</a></li>
-                <li class="dropdown"><a href="signIn.html">Login</a></li>
-                <ul class="dropdown-content">
-                    <li><a href="account.html">Profile</a></li>
-                    <li><a href="signIn.html">Sign In</a></li>
-                    <li><a href="signUp.html">Sign Up</a></li>
-                    <li>Sign Out</li>
+            <section class="main_list" id="mainList">
+                <ul class="navigation__items">
+                    <li><a class="current" href="test.html">Home</a></li>
+                    <li><a href="map.html">Explore</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="home.html">Contact Us</a></li>
+                    <li class="dropdown"><a href="signIn.html">Login</a></li>
+                    <ul class="dropdown-content">
+                        <li><a href="account.html">Profile</a></li>
+                        <li><a href="signIn.html">Sign In</a></li>
+                        <li><a href="signUp.html">Sign Up</a></li>
+                        <li>Sign Out</li>
+                    </ul>
                 </ul>
-            </ul>
-            <div class="hamburger-menu">
-                <div class="items__bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
+            </section>
+            <div class="media_button">
+                <button class="main_media_button" id="mediaButton">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>  
         </nav>
+        <div class="overlay"></div>
         <h1 class="index__h1">"Explore, Dream, Discover: Your Ultimate Travel Companion."</h1>
     </header>
     <section class="map">
