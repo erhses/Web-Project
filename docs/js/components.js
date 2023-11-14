@@ -3,7 +3,7 @@ class Cards {
   
     async fetchData() {
       try {
-        const response = await fetch('cards.json');
+        const response = await fetch('/docs/js/cards.json');
         const jsonData = await response.json();
         return jsonData;
       } catch (error) {
