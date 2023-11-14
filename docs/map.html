@@ -12,12 +12,14 @@
     <script src="script.js"></script>
     <script defer="defer" src="main.2281425b0d28644fb548.js"></script>
     <link href="styles.2281425b0d28644fb548.css" rel="stylesheet">
+    <link rel="stylesheet" href="/docs/styles/main.css">
+    <link rel="stylesheet" href="/docs/styles/index.css">
+    <!-- <script src="/docs/js/components.js"></script> -->
+    <!-- <script src="/docs/js/components.js"></script> -->
 </head>
 
 <body style="background-color: white;">
     <nav class="navigation">
-        <section><a href="index.html"><img class="navigation__img" src="assets/images/image-removebg-preview.png" alt=""
-                    style="width: 10rem;"></a></section>
         <ul class="navigation__items">
             <li><a class="current" href="test.html">Home</a></li>
             <li><a href="map.html">Explore</a></li>
@@ -37,18 +39,67 @@
             <div class="bar"></div>
         </div>
     </nav>
+
     <main>
         <h1>Selected location</h1>
-        <ul>
-            <li><img src="/images/boshloi had 2.png" alt="Бошлой хад" width="280" height="350"> <input type="button"
-                    value="More Details"> <input type="button" value="+"></li>
-            <li><input type="button" value="More Details" width="280" height="350"> <input type="button" value="+"></li>
-            <li><img src="/images/harnuur 1.png" alt="Хар нуур" width="280" height="350"> <input type="button"
-                    value="More Details"> <input type="button" value="+"></li>
-            <li><img src="/images/zawhan 1.png" alt="завхан" width="280" height="350"> <input type="button"
-                    value="More Details"> <input type="button" value="+"></li>
-        </ul><img src="/images/destination-map.png" alt="mgl-dest-map" width="711" height="354" usemap="#Map"
-            border="0" />
+        <div id="selectedItems" class="card"></div>
+        <script>
+            class Info {
+                constructor(card, showRemoveButton) {
+                    this.img = card.img;
+                    this.title = card.title;
+                    this.body = card.body;
+                    this.link = card.link;
+                    this.showRemoveButton = showRemoveButton;
+                }
+        
+                render() {
+                    return `
+                        <div class="card__image" style="background-image: url(${this.img});">
+                            <div class="card__image__details">
+                                <p class="text__title">${this.title}</p>
+                                <p class="text__body">${this.body}</p>
+                            </div>
+                            ${this.showRemoveButton ? `<button class="card__image__button" onclick="removeItem('${this.title}')">Remove from List</button>` : ''}
+                        </div>
+                    `;
+                }
+            }
+        
+            function displaySelectedItems() {
+                const selectedItems = JSON.parse(localStorage.getItem('selectedItems')) || [];
+                const selectedItemsContainer = document.getElementById('selectedItems');
+        
+                selectedItemsContainer.innerHTML = '';
+                const uniqueTitles = new Set();
+                for (const item of selectedItems) {
+                    if (!uniqueTitles.has(item.title)) {
+                        const itemContainer = document.createElement('div');
+                        itemContainer.classList.add('selected-item');
+        
+                        const prod = new Info(item, true);
+                        itemContainer.innerHTML = prod.render();
+                        selectedItemsContainer.appendChild(itemContainer);
+                        uniqueTitles.add(item.title);
+                    }
+                }
+            }
+        
+            function removeAll() {
+                localStorage.removeItem('selectedItems');
+                displaySelectedItems();
+            }
+        
+            function removeItem(title) {
+                const selectedItems = JSON.parse(localStorage.getItem('selectedItems')) || [];
+                const updatedItems = selectedItems.filter((item) => item.title !== title);
+        
+                localStorage.setItem('selectedItems', JSON.stringify(updatedItems));
+                displaySelectedItems();
+            }
+        
+            displaySelectedItems();
+        </script>
     </main>
     <footer>
         <div class="footer">
