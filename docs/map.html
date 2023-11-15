@@ -14,8 +14,6 @@
     <link href="styles.2281425b0d28644fb548.css" rel="stylesheet">
     <link rel="stylesheet" href="/docs/styles/main.css">
     <link rel="stylesheet" href="/docs/styles/index.css">
-    <!-- <script src="/docs/js/components.js"></script> -->
-    <!-- <script src="/docs/js/components.js"></script> -->
 </head>
 
 <body style="background-color: white;">
@@ -40,7 +38,7 @@
         </div>
     </nav>
 
-    <main>
+    <main style="margin-top: 100px;">
         <h1>Selected location</h1>
         <div id="selectedItems" class="card"></div>
         <script>
@@ -60,7 +58,7 @@
                                 <p class="text__title">${this.title}</p>
                                 <p class="text__body">${this.body}</p>
                             </div>
-                            ${this.showRemoveButton ? `<button class="card__image__button" onclick="removeItem('${this.title}')">Remove from List</button>` : ''}
+                            ${this.showRemoveButton ? `<button class="card__image__button" style="background-color: red;" onclick="removeItem('${this.title}')">Remove from List</button>` : ''}
                         </div>
                     `;
                 }

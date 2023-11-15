@@ -62,8 +62,6 @@ function addToSelected(title, img, body, link) {
   if (!isCardAlreadySelected) {
     selectedItems.push({ title, img, body, link });
     localStorage.setItem("selectedItems", JSON.stringify(selectedItems));
-  } else {
-    console.log(`Card with title '${title}' is already in the selected list.`);
   }
 }
 
