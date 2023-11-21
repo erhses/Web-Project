@@ -18,18 +18,18 @@ const postcssPlugins = [
 class RunAfterCompile {
     apply(compiler) {
         compiler.hooks.done.tap("Copy images", function() {
-            fse.copySync("./app/assets/images", "./docs/assets/images");
+            fse.copySync("./docs/assets/images", "./app/assets/images");
         });
     }
 }
 
-let pages = fse.readdirSync("./app")
+let pages = fse.readdirSync("./docs")
 .filter(function(file) {
     return file.endsWith(".html");
     }).map(function(page) {
         return new HtmlWebpackPlugin({
             filename: page, 
-            template: `./app/${page}`
+            template: `./docs/${page}`
         });
     });
 
@@ -42,7 +42,7 @@ let cssConfig = {
 };
 
 let config = {
-    entry: "./app/assets/scripts/App.js",
+    entry: "./docs/assets/scripts/App.js",
     plugins: pages,
     module: {
         rules: [
@@ -65,12 +65,12 @@ if(currentTask == 'dev'){
     cssConfig.use.unshift("style-loader");
         config.output = {
             filename: "bundled.js",
-            path: path.resolve(__dirname, 'app')
+            path: path.resolve(__dirname, 'docs')
     },
     config.devServer = {
-        watchFiles: ('./app/**/*.html'),
+        watchFiles: ('./docs/**/*.html'),
         static: {
-            directory: path.join(__dirname, "./app")
+            directory: path.join(__dirname, "./docs")
           },
         hot: true,
         host: '0.0.0.0',
@@ -86,7 +86,7 @@ if(currentTask == "build"){
     (config.output = {
         filename: "[name].[chunkhash].js",
         chunkFilename: "[name].[chunkhash].js",
-        path: path.resolve(__dirname, "docs")
+        path: path.resolve(__dirname, "app")
     }),
     (config.mode = "production");
     config.optimization = {
