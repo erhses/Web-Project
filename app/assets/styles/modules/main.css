@@ -3,6 +3,7 @@ body {
   }
   .index {
     background-image: url('/app/assets/images/header.png');
+    background-size: cover;
     margin: 0;
     height: 670px;
     &__h1 {
@@ -14,6 +15,7 @@ body {
   }
   .services {
     background-image: url('/app/assets/images/roadtrip1.png');
+    background-size: cover;
     margin: 0;
     height: 680px;
     &__h1 {
@@ -21,6 +23,19 @@ body {
       text-align: center;
       font-family: 'Lobster Two', sans-serif;
       color: #231c1c;
+    }
+  }
+  .profile {
+    background-image: url('/app/assets/images/Back\ img.png');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    height: 670px;
+    &__h1 {
+      margin: 250px;
+      text-align: center;
+      font-family: 'Lobster Two', sans-serif;
+      color: #fff;
     }
   }
   .navigation {
@@ -34,13 +49,10 @@ body {
     position: relative;
     top: 50px;
     z-index: 1;
-    /* width: auto; */
+    width: auto; 
   }
   .navigation__img {
-    /* margin-left: 150px;   */
-    /* width: 100px; */
-    /* height: 10px; */
-    position: absolute;
+    margin-left: 15px;
   }
   .navigation__items {
     display: flex;

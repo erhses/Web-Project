@@ -1,14 +1,18 @@
 [
 	{
-		"img": "/app/assets/images/zavhan.png",
+		"id": "1",
+		"img": "app/assets/images/zawhan.png",
 		"title": "Zawhan",
 		"body": "zawhan zawhan zawhan zawhan",
-		"link": "#"
+		"link": "#",
+		"alt": "Zawhan - Description of the image"
 	},
 	{
-		"img": "/app/assets/images/boshloi.png",
+		"id": "2",
+		"img": "app/assets/images/boshloi.png",
 		"title": "Boshloi",
 		"body": "boshloi boshloi boshloi",
-		"link": "#"
+		"link": "#",
+		"alt": "Boshloi - Description of the image"
 	}
 ]

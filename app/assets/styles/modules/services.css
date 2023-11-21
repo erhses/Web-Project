@@ -1,0 +1,70 @@
+.search {
+    margin: 0 18.75rem;
+    position: relative;
+    background-color: var(--primary);
+    display: flex;
+    opacity: 80%;
+    justify-content: space-evenly;
+    align-items: center;
+    bottom: 100px;
+    border-radius: 20px;
+    text-decoration: none;
+
+    &__items {
+        display: flex;
+        text-decoration: none;
+        list-style: none;
+        flex-wrap: wrap;
+
+        li {
+            margin: 0 10px;
+            font-size: 16px;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+    }
+}
+
+.car {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 200px 0 200px;
+    gap: 40px;
+
+    &__card {
+        h3 {
+            text-align: center;
+        }
+        &__container {
+            margin: 0 20px;
+            .foot {
+                display: flex;
+                justify-content: space-between;
+            }
+            .price {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .car-container {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+}
+
+
+.car_filter {
+    margin: 50px;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    .category {
+        display: flex;
+        flex-direction: column;
+    }
+}

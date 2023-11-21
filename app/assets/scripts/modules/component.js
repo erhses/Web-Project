@@ -32,6 +32,7 @@ class Cards {
   
   class Info {
     constructor(card) {
+      this.id = card.id;
       this.img = card.img;
       this.title = card.title;
       this.body = card.body;
@@ -40,12 +41,12 @@ class Cards {
   
     render() {
       return `
-          <div class="card__image" style="background-image: url('${this.img}');">
+          <div class="card__image" style="background-image: url('${this.img}') ;" id="${this.id}">
             <div class="card__image__details">
               <p class="text__title">${this.title}</p>
               <p class="text__body">${this.body}</p>
             </div>
-            <button class="card__image__button" onclick="addToSelected('${this.title}', '${this.img}', '${this.body}', '${this.link}')">Add to List</button>
+            <button class="card__image__button" onclick="addToSelected('${this.id}', '${this.title}', '${this.img}', '${this.body}', '${this.link}')">Add to List</button>
           </div>
         `;
     }
@@ -54,14 +55,13 @@ class Cards {
   const cards = new Cards();
   cards.init();
   
-  function addToSelected(title, img, body, link) {
+  function addToSelected(id, title, img, body, link) {
     const selectedItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
     const isCardAlreadySelected = selectedItems.some(
-      (item) => item.title === title
-    );
+      (item) => item.id === id);
   
     if (!isCardAlreadySelected) {
-      selectedItems.push({ title, img, body, link });
+      selectedItems.push({id, title, img, body, link });
       localStorage.setItem("selectedItems", JSON.stringify(selectedItems));
     }
   }
