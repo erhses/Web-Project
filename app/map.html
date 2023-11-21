@@ -1,4 +1,41 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Discover the perfect destination for your next adventure with our travel planner. Create personalized itineraries, find the best accommodations, and make unforgettable memories. Start planning today!"><title>Map</title><link rel="stylesheet" href="/css/basics.css"><link rel="stylesheet" href="/css/map.css"><script src="script.js"></script><script defer="defer" src="main.2281425b0d28644fb548.js"></script><link href="styles.2281425b0d28644fb548.css" rel="stylesheet"><link rel="stylesheet" href="/docs/styles/main.css"><link rel="stylesheet" href="/docs/styles/index.css"><script defer="defer" src="main.a93aa2049da3fe66dc5e.js"></script><link href="styles.a93aa2049da3fe66dc5e.css" rel="stylesheet"></head><body style="background-color: white;"><nav class="navigation"><ul class="navigation__items"><li><a class="current" href="test.html">Home</a></li><li><a href="map.html">Explore</a></li><li class="dropdown"><a href="services.html">Services</a></li><li><a href="home.html">Contact Us</a></li><li class="dropdown"><a href="signIn.html">Login</a></li><ul class="dropdown-content"><li><a href="account.html">Profile</a></li><li><a href="signIn.html">Sign In</a></li><li><a href="signUp.html">Sign Up</a></li><li>Sign Out</li></ul></ul><div class="hamburger-menu"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div></nav><main><h1>Selected location</h1><div id="selectedItems" class="card"></div><script>class Info {
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description"
+        content="Discover the perfect destination for your next adventure with our travel planner. Create personalized itineraries, find the best accommodations, and make unforgettable memories. Start planning today!">
+    <title>Map</title>
+</head>
+
+<body style="background-color: white;">
+    <nav class="navigation">
+        <ul class="navigation__items">
+            <li><a class="current" href="test.html">Home</a></li>
+            <li><a href="map.html">Explore</a></li>
+            <li class="dropdown"><a href="services.html">Services</a></li>
+            <li><a href="home.html">Contact Us</a></li>
+            <li class="dropdown"><a href="signIn.html">Login</a></li>
+            <ul class="dropdown-content">
+                <li><a href="account.html">Profile</a></li>
+                <li><a href="signIn.html">Sign In</a></li>
+                <li><a href="signUp.html">Sign Up</a></li>
+                <li>Sign Out</li>
+            </ul>
+        </ul>
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+
+    <main style="margin-top: 100px;">
+        <h1>Selected location</h1>
+        <div id="selectedItems" class="card"></div>
+        <script>
+            class Info {
                 constructor(card, showRemoveButton) {
                     this.img = card.img;
                     this.title = card.title;
@@ -6,7 +43,7 @@
                     this.link = card.link;
                     this.showRemoveButton = showRemoveButton;
                 }
-        
+
                 render() {
                     return `
                         <div class="card__image" style="background-image: url(${this.img});">
@@ -14,23 +51,23 @@
                                 <p class="text__title">${this.title}</p>
                                 <p class="text__body">${this.body}</p>
                             </div>
-                            ${this.showRemoveButton ? `<button class="card__image__button" onclick="removeItem('${this.title}')">Remove from List</button>` : ''}
+                            ${this.showRemoveButton ? `<button class="card__image__button" style="background-color: red;" onclick="removeItem('${this.title}')">Remove from List</button>` : ''}
                         </div>
                     `;
                 }
             }
-        
+
             function displaySelectedItems() {
                 const selectedItems = JSON.parse(localStorage.getItem('selectedItems')) || [];
                 const selectedItemsContainer = document.getElementById('selectedItems');
-        
+
                 selectedItemsContainer.innerHTML = '';
                 const uniqueTitles = new Set();
                 for (const item of selectedItems) {
                     if (!uniqueTitles.has(item.title)) {
                         const itemContainer = document.createElement('div');
                         itemContainer.classList.add('selected-item');
-        
+
                         const prod = new Info(item, true);
                         itemContainer.innerHTML = prod.render();
                         selectedItemsContainer.appendChild(itemContainer);
@@ -38,18 +75,45 @@
                     }
                 }
             }
-        
+
             function removeAll() {
                 localStorage.removeItem('selectedItems');
                 displaySelectedItems();
             }
-        
+
             function removeItem(title) {
                 const selectedItems = JSON.parse(localStorage.getItem('selectedItems')) || [];
                 const updatedItems = selectedItems.filter((item) => item.title !== title);
-        
+
                 localStorage.setItem('selectedItems', JSON.stringify(updatedItems));
                 displaySelectedItems();
             }
-        
-            displaySelectedItems();</script></main><footer><div class="footer"><div class="footer__one"><h3>Санал хүсэлт үлдээх хэсэг</h3><input class="input" type="email" name="email" placeholder="Enter your email"> <textarea name="textarea" class="textarea" cols="30" rows="10" placeholder="Enter your comment"></textarea><br><button type="submit">submit</button></div><div class="footer__two"><h3>About Us</h3><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptas dolorum vitae neque, a nesciunt, consectetur voluptatibus nemo, earum esse mollitia debitis tempora! Adipisci blanditiis, ut vitae quasi iusto nobis.</p></div><div class="footer__three"><h3>Contact Us</h3><p>976 9999 9999</p><p>nomail.com</p></div></div><p class="footer__end">&copy; 2023 copyright</p></footer><script src="bundled.js"></script></body></html>
+
+            displaySelectedItems();
+        </script>
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="footer__one">
+                <h3>Санал хүсэлт үлдээх хэсэг</h3><input class="input" type="email" name="email"
+                    placeholder="Enter your email"> <textarea name="textarea" class="textarea" cols="30" rows="10"
+                    placeholder="Enter your comment"></textarea><br><button type="submit">submit</button>
+            </div>
+            <div class="footer__two">
+                <h3>About Us</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptas dolorum vitae neque, a
+                    nesciunt, consectetur voluptatibus nemo, earum esse mollitia debitis tempora! Adipisci blanditiis,
+                    ut vitae quasi iusto nobis.</p>
+            </div>
+            <div class="footer__three">
+                <h3>Contact Us</h3>
+                <p>976 9999 9999</p>
+                <p>nomail.com</p>
+            </div>
+        </div>
+        <p class="footer__end">&copy; 2023 copyright</p>
+    </footer>
+    <script src="bundled.js"></script>
+</body>
+
+</html>

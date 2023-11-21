@@ -1,0 +1,28 @@
+:root {
+    /* colors */
+    --primary: #252525;
+    --secondary: #9B8DF1;
+        /* Font size atLarge */
+        --desktop-text-xsmall: 0.8rem;
+        --desktop-text-small: 1rem;
+        --desktop-text-medium: 1.25rem;
+        --desktop-text-mid: 1.5rem;
+        --desktop-text-large: 1.75rem;
+        --desktop-text-xlarge: 3rem;
+    
+        /* Font size atMedium */
+        --tablet-text-xsmall: 0.6rem;
+        --tablet-text-small: 0.75rem;
+        --tablet-text-medium: 1rem;
+        --tablet-text-mid: 1.25rem;
+        --tablet-text-large: 1.5rem;
+        --tablet-text-xlarge: 1.75rem;
+    
+        /* Font size atSmall */
+        --mobile-text-xsmall: 0.4rem;
+        --mobile-text-small: 0.6rem;
+        --mobile-text-medium: 0.8rem;
+        --mobile-text-mid: 1rem;
+        --mobile-text-large: 1.25rem;
+        --mobile-text-xlarge: 1.5rem;
+  }
