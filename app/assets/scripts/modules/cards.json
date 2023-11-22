@@ -1,7 +1,7 @@
 [
 	{
 		"id": "1",
-		"img": "app/assets/images/zawhan.png",
+		"img": "/assets/images/zawhan.png",
 		"title": "Zawhan",
 		"body": "zawhan zawhan zawhan zawhan",
 		"link": "#",
@@ -9,7 +9,7 @@
 	},
 	{
 		"id": "2",
-		"img": "app/assets/images/boshloi.png",
+		"img": "/assets/images/boshloi.png",
 		"title": "Boshloi",
 		"body": "boshloi boshloi boshloi",
 		"link": "#",

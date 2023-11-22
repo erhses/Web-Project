@@ -43,5 +43,13 @@
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erhses/erhses.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/erhses/erhses.github.io/issues"
+  },
+  "homepage": "https://github.com/erhses/erhses.github.io#readme"
 }
