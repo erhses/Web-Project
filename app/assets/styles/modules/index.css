@@ -26,7 +26,7 @@ area:hover {
 }
 
 .card__image__details {
-  color: var(--primary);
+  color: white;
   display: grid;
   gap: 0.5em;
   height: 100%;
@@ -34,7 +34,7 @@ area:hover {
 }
 
 .card__image__details .text__body {
-  color: var(--primary);
+  color: white;
 }
 
 .card__image__details .text__title {
