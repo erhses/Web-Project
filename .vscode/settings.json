@@ -1,4 +1,5 @@
 {
+<<<<<<< Updated upstream
     "liveServer.settings.port": 5502,
     // "workbench.colorCustomizations": {
     //     "activityBar.activeBackground": "#ffffff",
@@ -21,4 +22,7 @@
     //     "titleBar.inactiveBackground": "#00000099",
     //     "titleBar.inactiveForeground": "#e7e7e799"
     // }
+=======
+    "liveServer.settings.port": 5502
+>>>>>>> Stashed changes
 }

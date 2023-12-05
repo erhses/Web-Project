@@ -1,0 +1,45 @@
+[
+    
+	{
+		"id": "1",
+		"name": "Toyota Fortuner 2023",
+		"image": "assets/images/toyota-car.png",
+		"type": "SUV",
+		"seats": 5,
+		"mileage": "unlimited miles",
+		"fuel_efficiency": "30km/l",
+		"features": ["GPS"],
+		"price": {
+			"day": 100.35,
+			"total": 301.04
+		}
+	},
+    {
+		"id": "2",
+		"name": "Toyota Fortuner 2023",
+		"image": "assets/images/toyota-car.png",
+		"type": "SUV",
+		"seats": 5,
+		"mileage": "unlimited miles",
+		"fuel_efficiency": "30km/l",
+		"features": ["GPS"],
+		"price": {
+			"day": 100.35,
+			"total": 301.04
+		}
+	},
+    {
+		"id": "3",
+		"name": "Toyota Fortuner 2023",
+		"image": "assets/images/toyota-car.png",
+		"type": "SUV",
+		"seats": 5,
+		"mileage": "unlimited miles",
+		"fuel_efficiency": "30km/l",
+		"features": ["GPS"],
+		"price": {
+			"day": 100.35,
+			"total": 301.04
+		}
+	}
+]

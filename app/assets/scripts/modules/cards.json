@@ -2,17 +2,30 @@
 	{
 		"id": "1",
 		"img": "/assets/images/zawhan.png",
+<<<<<<< Updated upstream
 		"title": "Zawhan",
+=======
+		"title": "Завхан",
+>>>>>>> Stashed changes
 		"body": "zawhan zawhan zawhan zawhan",
-		"link": "#",
-		"alt": "Zawhan - Description of the image"
+		"link": "#"
 	},
 	{
 		"id": "2",
 		"img": "/assets/images/boshloi.png",
+<<<<<<< Updated upstream
 		"title": "Boshloi",
+=======
+		"title": "Бошлой",
+>>>>>>> Stashed changes
 		"body": "boshloi boshloi boshloi",
-		"link": "#",
-		"alt": "Boshloi - Description of the image"
+		"link": "#"
+	},
+	{
+		"id": "3",
+		"img": "/assets/images/harnuur.png",
+		"title": "Хар нуур",
+		"body": "harnuur",
+		"link": "#"
 	}
 ]

@@ -12,6 +12,7 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap');
   </style>
+  <script src="assets/scripts/modules/car.js"></script>
 </head>
 
 <body style="background-color: white;">
@@ -47,7 +48,11 @@
     <nav class="search">
       <ul class="search__items">
         <li><input type="text" placeholder="Pick-up Location"></li>
-        <li><input type="date" name="" id=""></li>
+        <li>
+
+          <input type="text" class="datepicker-here form-control" id="minMaxExample" data-date-format="dd/mm/yyyy"
+            data-language='en' placeholder="Select Range">
+        </li>
         <li><input type="time" name="" id=""></li>
         <li><input type="text" placeholder="Pick-up Location"></li>
         <li><input type="date" name="" id=""></li>
@@ -58,44 +63,49 @@
   </header>
   <aside class="car_filter">
     <h2>Filters</h2>
-    <h3>Vehile type</h3>
+    <h3></h3>
     <section class="category">
-      <span>Sedan</span>
-      <img src="" alt="">
-      <span>Bike</span>
-      <img src="" alt="">
-      <span>Quad</span>
-      <img src="" alt="">
-      <span>Suv</span>
-      <img src="" alt="">
-      <span>Bus</span>
-      <img src="" alt="">
+      <span><input type="checkbox" id="" data-category="Sports Car"> Sports Car</span>
+      <span><input type="checkbox" id="" data-category="Economy"> Economy</span>
+      <span><input type="checkbox" id="" data-category="Compact"> Compact</span>
+      <span><input type="checkbox" id="" data-category="Midsize"> Midsize</span>
+      <span><input type="checkbox" id="" data-category="Standard"> Standard</span>
+      <span><input type="checkbox" id="" data-category="Premium"> Premium</span>
+      <span><input type="checkbox" id="" data-category="Luxury"> Luxury</span>
+      <span><input type="checkbox" id="" data-category="SUV"> SUV</span>
     </section>
   </aside>
   <section class="car">
-    <div class="car__card">
-      <h3>Toyota fortuner 2023</h3><img src="assets/images/toyota-car.png" alt="toyota-car">
+    <!-- <div class="car__card">
+      <h4>Toyota fortuner 2023</h4><img src="assets/images/toyota-car.png" width="320px" alt="toyota-car">
       <section class="car__card__container">
         <div class="foot">
-          <span>5 seat</span>
-          <img src="" alt="">
-          <span>unlimited miles</span>
-          <img src="" alt="">
-          <span>30km/l</span>
-          <img src="" alt="">
-          <span>GPS</span>
-          <img src="" alt="">
+          <div class="sda">
+            <img src="assets/images/seat.png" alt="">
+            <span>5 seat</span>
+          </div>
+          <div class="sda">
+            <img src="assets/images/miles.png" alt="">
+            <span>unlimited miles</span>
+          </div>
+          <div class="sda">
+            <img src="assets/images/30kml.png" alt="">
+            <span>30km/l</span>
+          </div>
+          <div class="sda">
+            <img src="assets/images/gps.png" alt="">
+            <span>GPS</span>
+          </div>
         </div>
-       <div class="car-container">
+        <div class="car-container">
           <div class="price">
             <div class="day">$100.35 / day</div>
             <div class="total">$301.04 / total</div>
           </div>
           <button class="rent-now">Rent now</button>
-        </section>
-       </div>
-    </div>
-
+      </section>
+    </div> -->
+  </section>
   <footer>
     <div class="footer">
       <div class="footer__one">
@@ -119,5 +129,4 @@
   </footer>
   <script src="bundled.js"></script>
 </body>
-
 </html>

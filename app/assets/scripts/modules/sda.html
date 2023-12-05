@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Range Slider</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f9fa;
+        }
+
+        .slider-container {
+            width: 300px;
+            text-align: center;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        #price-range-display {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider-container">
+        <h2>Car Price Range Slider</h2>
+
+        <label for="priceRange">Price Range:</label>
+        <input type="range" id="priceRange" min="5000" max="50000" step="1000" value="10000" />
+        <span id="price-range-display">$10,000 - $30,000</span>
+    </div>
+    <iframe width="560" height="315" src="https://www.youtube.com/watch?v=2KWdT4PkXgY" frameborder="0" allowfullscreen></iframe>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const priceRangeSlider = document.getElementById('priceRange');
+            const priceRangeDisplay = document.getElementById('price-range-display');
+
+            updatePriceRangeDisplay();
+
+            priceRangeSlider.addEventListener('input', updatePriceRangeDisplay);
+
+            function updatePriceRangeDisplay() {
+                const formattedMinPrice = new Intl.NumberFormat().format(priceRangeSlider.min);
+
+                const formattedMaxPrice = new Intl.NumberFormat().format(priceRangeSlider.value);
+
+                priceRangeDisplay.textContent = `$${formattedMinPrice} - $${formattedMaxPrice}`;
+            }
+        });
+    </script>                                               
+</body>
+
+</html>

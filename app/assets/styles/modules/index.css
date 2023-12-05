@@ -1,11 +1,22 @@
 area {
-  background-color: #252525;
-  position: relative;
   transition: transform 0.2s ease;
+  z-index: 1;
 }
 
 area:hover {
   transform: scale(1.2);
+}
+.dest-map {
+  z-index: 1;
+  border-color: red;
+}
+
+.map {
+  z-index: 1;
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  padding: 60px;
 }
 
 .card {
