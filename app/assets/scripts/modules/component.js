@@ -66,10 +66,25 @@ class Cards {
     }
   }
   
+  function updateSelectedItemsCount() {
+    const selectedItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
+    const count = selectedItems.length;
+  
+    const countBubble = document.getElementById("selectedItemsCount");
+    countBubble.textContent = count;
+    countBubble.style.display = count > 0 ? "block" : "none";
+  }
+
   function redirectToSelected() {
-    try {
-      window.location.href = "map.html";
-    } catch (error) {
-      console.error("Error redirecting:", error);
+    const selectedItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
+  
+    if (selectedItems.length > 0) {
+      try {
+        window.location.href = "map.html";
+      } catch (error) {
+        console.error("Error redirecting:", error);
+      }
+    } else {
+      alert("Please select at least one item before checking selected items.");
     }
   }
