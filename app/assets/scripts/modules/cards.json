@@ -2,22 +2,14 @@
 	{
 		"id": "1",
 		"img": "/assets/images/zawhan.png",
-<<<<<<< Updated upstream
 		"title": "Zawhan",
-=======
-		"title": "Завхан",
->>>>>>> Stashed changes
 		"body": "zawhan zawhan zawhan zawhan",
 		"link": "#"
 	},
 	{
 		"id": "2",
 		"img": "/assets/images/boshloi.png",
-<<<<<<< Updated upstream
 		"title": "Boshloi",
-=======
-		"title": "Бошлой",
->>>>>>> Stashed changes
 		"body": "boshloi boshloi boshloi",
 		"link": "#"
 	},

@@ -16,9 +16,10 @@ class Cards {
       const jsonData = await this.fetchData();
   
       if (jsonData) {
-        const products = jsonData;
+        const productIds = ["1", "2", "3"];
+        const selectproducts = jsonData.filter((selectproduct) => productIds.includes(selectproduct.id));
         let data = "";
-        for (const product of products) {
+        for (const product of selectproducts) {
           const prod = new Info(product);
           data += prod.render();
         }
