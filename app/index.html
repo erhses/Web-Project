@@ -13,8 +13,8 @@
     @import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap');
 .red-bubble {
   position: absolute;
-  top: -8px; /* Adjust the top position as needed */
-  right: -8px; /* Adjust the right position as needed */
+  top: -8px;
+  right: -8px;
   background-color: red;
   color: white;
   border-radius: 50%;
@@ -114,11 +114,12 @@
       </div><a class="card__image__button" href="#link">More info</a>
     </div> -->
   </section>
-<!-- Include this in your HTML, where you want the red bubble to appear -->
-<div id="selectedItemsCountBubble" style="position: relative; display: inline-block;">
-  <button id="checkSelected" onclick="redirectToSelected()">Check Selected</button>
-  <div id="selectedItemsCount" style="display: none; position: absolute; top: -8px; right: -8px; background-color: red; color: white; border-radius: 50%; padding: 5px 8px; font-size: 12px;"></div>
-</div>
+<!-- <div id="selectedItemsCountBubble" style="position: relative; display: inline-block;"> -->
+  <!-- <button id="checkSelected" onclick="redirectToSelected()">Check Selected</button> -->
+  <button id="checkSelected" onclick="redirectToSelected()">Check Selected <span id="checkSelectedBadge" class="badge"></span></button>
+  <!-- <div id="selectedItemsCount" style="display: none; position: absolute; top: -8px; right: -8px; background-color: red; color: white; border-radius: 50%; padding: 5px 8px; font-size: 12px;"></div> -->
+<!-- </div> -->
+<div id="notificationBadge"></div>
 
 
 

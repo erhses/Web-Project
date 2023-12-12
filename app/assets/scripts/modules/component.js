@@ -9,6 +9,7 @@ class Cards {
       return jsonData;
     } catch (error) {
       console.error("Error fetching data:", error);
+      throw error;
     }
   }
 
