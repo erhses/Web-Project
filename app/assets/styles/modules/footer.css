@@ -1,72 +1,72 @@
 :root {
-    --primary: #252525;
-    --secondary: #9b8df1;
-  }
+  --primary: #252525;
+  --secondary: #9b8df1;
+}
 
-  .footer {
-    border-top: 2px solid var(--secondary);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 20px;
-  }
-  .footer__one,
-  .footer__three,
-  .footer__two {
-    flex: 1;
-    text-align: center;
-  }
-  .footer__end {
-    display: flex;
-    justify-content: center;
-  }
-  .footer .input {
-    background-color: #eee;
-    border: none;
-    border-radius: 16px;
-    cursor: pointer;
-    font-size: 16px;
-    margin: 5px;
-    padding: 16px;
-    width: 60%;
-  }
-  .footer .input:focus {
-    outline-color: #9b8df1;
-  }
-  .footer .textarea {
-    background-color: #eee;
-    border: none;
-    border-radius: 16px;
-    cursor: pointer;
-    font-size: 16px;
-    padding: 16px;
-    resize: none;
-    width: 60%;
-  }
-  .footer .textarea:focus {
-    outline-color: #9b8df1;
-  }
-  .footer button {
-    background-color: #9b8df1;
-    border: 0;
-    border-radius: 100px;
-    color: #fff;
-    font-weight: 700;
-    padding: 12.5px 30px;
-    transition: all 0.5s;
-  }
-  .footer button:hover {
-    box-shadow: 0 0 20px #6fc5ff50;
-    transform: scale(1.05);
-  }
-  .footer button:active {
-    box-shadow: none;
-    transform: scale(0.96);
-    transition: all 0.25s;
-  } 
+.footer {
+  border-top: 2px solid var(--secondary);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px;
+}
+.footer__one,
+.footer__three,
+.footer__two {
+  flex: 1;
+  text-align: center;
+}
+.footer__end {
+  display: flex;
+  justify-content: center;
+}
+.footer .input {
+  background-color: #eee;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 5px;
+  padding: 16px;
+  width: 60%;
+}
+.footer .input:focus {
+  outline-color: #9b8df1;
+}
+.footer .textarea {
+  background-color: #eee;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 16px;
+  resize: none;
+  width: 60%;
+}
+.footer .textarea:focus {
+  outline-color: #9b8df1;
+}
+.footer button {
+  background-color: #9b8df1;
+  border: 0;
+  border-radius: 100px;
+  color: #fff;
+  font-weight: 700;
+  padding: 12.5px 30px;
+  transition: all 0.5s;
+}
+.footer button:hover {
+  box-shadow: 0 0 20px #6fc5ff50;
+  transform: scale(1.05);
+}
+.footer button:active {
+  box-shadow: none;
+  transform: scale(0.96);
+  transition: all 0.25s;
+} 
 @media (min-width: 480px) and (max-width: 780px) {
-    .footer {
-      display: flex;
-      flex-wrap: wrap; 
-    }
+  .footer {
+    display: flex;
+    flex-wrap: wrap; 
+  }
 }

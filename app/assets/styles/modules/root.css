@@ -26,3 +26,7 @@
         --mobile-text-large: 1.25rem;
         --mobile-text-xlarge: 1.5rem;
   }
+
+  body {
+    font-family: 'Raleway';
+}

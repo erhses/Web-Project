@@ -1,15 +1,11 @@
 .search {
-    margin: 0 18.75rem;
-    position: relative;
     background-color: var(--primary);
     display: flex;
-    opacity: 80%;
-    justify-content: space-evenly;
     align-items: center;
-    bottom: 100px;
+    opacity: 80%;
     border-radius: 20px;
     text-decoration: none;
-    position: absolute;
+    margin: 2rem auto;
 
     &__items {
         display: flex;
@@ -29,15 +25,15 @@
 
 .car {
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
-    margin: 10px 200px;
-    gap: 40px;
+    width: 100%;
 
     &__card {
         background-color: rgb(228, 225, 222);
         border: 1px solid rgb(228, 225, 222);
         border-radius: 20px;
-        margin: 40px;
+        margin: 30px auto;
         padding: 10px;
 
         h4 {
@@ -45,34 +41,52 @@
         }
 
         &__container {
-            margin: 0 20px;
 
             .foot {
                 display: flex;
                 justify-content: space-between;
-
-                img {
-                    width: 30px;
-                    height: 30px;
-                }
-
-                span {
+                gap: 5px;
+                .sda{
                     display: flex;
-                    text-align: center;
+                    flex: 1;
+                    flex-direction: column;
+
+                    img {
+                        width: 30px;
+                        height: 30px;
+                        margin: 0 auto;
+                    }
+    
+                    span {
+                        text-align: center;
+                    }
                 }
             }
 
             .price {
                 display: flex;
                 flex-direction: column;
+                flex-grow: 2;
             }
 
             .car-container {
                 display: flex;
                 justify-content: space-between;
+                align-items: center;
             }
         }
     }
+}
+
+.container-1{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-2{
+    width: 80%;
+    margin-left: 20%;
 }
 
 
@@ -82,6 +96,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    width: 15%;
 
     .category {
         display: flex;
@@ -89,5 +104,27 @@
         gap: 5px;
         list-style: none;
 
+    }
+
+    #saved{
+        margin-top: 3rem;
+        padding: 1rem;
+        background-color: rgb(228, 225, 222);
+        border: 1px solid rgb(228, 225, 222);
+        border-radius: 20px;
+
+        h3{
+            text-align: center;
+        }
+
+        .subcontainer{
+            height: 10rem;
+            border-radius: 1rem;
+
+            li{
+                list-style: none;
+                padding: 0.25rem;
+            }
+        }
     }
 }

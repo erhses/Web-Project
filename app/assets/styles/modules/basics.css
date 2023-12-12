@@ -4,9 +4,9 @@
 }
 
 body {
-    font-family: 'nunito';
+    font-family: 'Raleway';
 }
-.search {
+/*.search {
     z-index: 1;
     margin: 0 30px;
     display: flex;
@@ -27,7 +27,6 @@ body {
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
-            background: rgb(119, 0, 255);
         }
     }
 }
@@ -39,7 +38,6 @@ body {
     position: relative;
     justify-content: space-evenly;
     align-items: center;
-    background-color: var(--primary);
     opacity: 80%;
     border-radius: 20px;
 
@@ -86,7 +84,6 @@ body {
     color: white;
     padding: 14px 16px;
     background-color: inherit;
-    font-family: inherit;
     margin: 0;
 }
 
@@ -97,7 +94,6 @@ body {
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -158,4 +154,4 @@ body {
         display: block;
         background-color: var(--primary);
     }
-}
+}*/
