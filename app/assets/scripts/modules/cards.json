@@ -4,20 +4,26 @@
 		"img": "/assets/images/zawhan.png",
 		"title": "Завхан",
 		"body": "zawhan zawhan zawhan zawhan",
-		"link": "#"
+		"link": "#",
+		"lat" : "47.742778",
+		"long" : "96.843333"
 	},
 	{
 		"id": "2",
 		"img": "/assets/images/boshloi.png",
 		"title": "Бошлой",
 		"body": "boshloi boshloi boshloi",
-		"link": "#"
+		"link": "#",
+		"lat" : "",
+		"long" : ""
 	},
 	{
 		"id": "3",
 		"img": "/assets/images/harnuur.png",
 		"title": "Хар нуур",
 		"body": "harnuur",
-		"link": "#"
+		"link": "#",
+		"lat" : "48.070082134451134",
+		"long" : "93.36066180055798"
 	}
 ]
