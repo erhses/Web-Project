@@ -1,4 +1,4 @@
-import 'app/assets/styles/styles.css';
+import '../styles/styles.css';
 import 'lazysizes';
 
 if (module.hot) {

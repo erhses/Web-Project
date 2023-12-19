@@ -16,6 +16,11 @@
   </head>
   <body>
     <section>
+      <ul>
+        <% if(typeof errors != 'undefined') { %> <% errors.forEach(errors =>{ %>
+          <li> <%= errors.message %></li>
+        <%}) %> <%}%>
+      </ul>
       <h1>Sign Up</h1>
       <p>
         If you already have an account, <a href="login">Sign in here!</a>
@@ -29,11 +34,11 @@
           placeholder="Enter your email account"  
           required
         /><br /><br />
-        <label for="username">Username</label><br />
+        <label for="name">username</label><br />
         <input class="inputt"
           type="text"
-          name="username"
-          id="username"
+          name="name"
+          id="name"
           placeholder="Enter your Username"
           required
         /><br /><br />
