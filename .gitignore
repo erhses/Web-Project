@@ -2,3 +2,5 @@ node_modules/
 Thumbs.db
 *.log
 .cache
+dbConfig.js
+.env
