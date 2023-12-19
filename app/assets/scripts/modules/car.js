@@ -59,7 +59,7 @@ class CarList {
 			{
 				id: 1,
 				name: "Toyota Fortuner 2023",
-				image: "assets/images/toyota-car.png",
+				image: "app/assets/images/toyota-car.png",
 				type: "SUV",
 				seats: 5,
 				mileage: "unlimited miles",
@@ -73,7 +73,7 @@ class CarList {
 			{
 				id: 2,
 				name: "Honda Civic 2023",
-				image: "assets/images/honda-civic.png",
+				image: "app/assets/images/honda-civic.png",
 				category: "Economy",
 				seats: 5,
 				mileage: "unlimited miles",
@@ -87,7 +87,7 @@ class CarList {
 			{
 				id: 3,
 				name: "Mercedes-Benz E-Class 2023",
-				image: "assets/images/mercedes-benz-e-class.png",
+				image: "app/assets/images/mercedes-benz-e-class.png",
 				category: "Standard",
 				seats: 5,
 				mileage: "limited miles",
@@ -101,7 +101,7 @@ class CarList {
 			{
 				id: 4,
 				name: "BMW 7 Series 2023",
-				image: "assets/images/bmw-7-series.png",
+				image: "app/assets/images/bmw-7-series.png",
 				category: "Premium",
 				seats: 4,
 				mileage: "limited miles",
@@ -115,7 +115,7 @@ class CarList {
 			{
 				id: 5,
 				name: "Tesla Model S 2023",
-				image: "assets/images/tesla-model-s.png",
+				image: "app/assets/images/tesla-model-s.png",
 				category: "Luxury",
 				seats: 5,
 				mileage: "limited miles",
@@ -129,7 +129,7 @@ class CarList {
 			{
 				id: 6,
 				name: "Porsche 911 2023",
-				image: "assets/images/porsche-911.png",
+				image: "app/assets/images/porsche-911.png",
 				category: "Sports Car",
 				seats: 2,
 				mileage: "limited miles",
@@ -143,7 +143,7 @@ class CarList {
 			{
 				id: 7,
 				name: "Lamborghini Huracan 2023",
-				image: "assets/images/lamborghini-huracan.png",
+				image: "app/assets/images/lamborghini-huracan.png",
 				category: "Sports Car",
 				seats: 2,
 				mileage: "limited miles",
@@ -157,7 +157,7 @@ class CarList {
 			{
 				id: 8,
 				name: "Volvo S90 2023",
-				image: "assets/images/volvo-s90.png",
+				image: "app/assets/images/volvo-s90.png",
 				category: "Premium",
 				seats: 5,
 				mileage: "limited miles",

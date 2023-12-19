@@ -3,7 +3,7 @@ class Cards {
 
   async fetchData() {
     try {
-      const response = await fetch("/assets/scripts/modules/cards.json");
+      const response = await fetch("app/assets/scripts/modules/cards.json");
       const jsonData = await response.json();
       console.log(jsonData);
       return jsonData;
@@ -81,7 +81,7 @@ function redirectToSelected() {
 
   if (selectedItems.length > 0) {
     try {
-      window.location.href = "map.html";
+      window.location.href = "map";
     } catch (error) {
       console.error("Error redirecting:", error);
     }

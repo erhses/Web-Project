@@ -1,4 +1,4 @@
-import { fetchData } from "./fetchData.js";
+import { fetchData } from "app/assets/scripts/modules/fetchData.js";
 
 const jsondata = await fetchData();
 const carList = jsondata.record.carList;

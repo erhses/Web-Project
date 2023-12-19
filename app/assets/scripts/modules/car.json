@@ -3,7 +3,7 @@
 	{
 		"id": "1",
 		"name": "Toyota Fortuner 2023",
-		"image": "assets/images/toyota-car.png",
+		"image": "app/assets/images/toyota-car.png",
 		"type": "SUV",
 		"seats": 5,
 		"mileage": "unlimited miles",
@@ -16,7 +16,7 @@
 	},
     {
 		"id": "2",
-		"name": "Toyota Fortuner 2023",
+		"name": "app/Toyota Fortuner 2023",
 		"image": "assets/images/toyota-car.png",
 		"type": "SUV",
 		"seats": 5,
@@ -31,7 +31,7 @@
     {
 		"id": "3",
 		"name": "Toyota Fortuner 2023",
-		"image": "assets/images/toyota-car.png",
+		"image": "app/assets/images/toyota-car.png",
 		"type": "SUV",
 		"seats": 5,
 		"mileage": "unlimited miles",

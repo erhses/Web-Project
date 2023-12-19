@@ -1,7 +1,7 @@
 [
 	{
 		"id": "1",
-		"img": "/assets/images/zawhan.png",
+		"img": "app/assets/images/zawhan.png",
 		"title": "Завхан",
 		"body": "zawhan zawhan zawhan zawhan",
 		"link": "#",
@@ -10,7 +10,7 @@
 	},
 	{
 		"id": "2",
-		"img": "/assets/images/boshloi.png",
+		"img": "app/assets/images/boshloi.png",
 		"title": "Бошлой",
 		"body": "boshloi boshloi boshloi",
 		"link": "#",
@@ -19,7 +19,7 @@
 	},
 	{
 		"id": "3",
-		"img": "/assets/images/harnuur.png",
+		"img": "app/assets/images/harnuur.png",
 		"title": "Хар нуур",
 		"body": "harnuur",
 		"link": "#",
