@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
-const {pool} = require("./dbConfig");
+const {pool} = require("./dbConfig.js");
 const bcrypt = require("bcrypt");
+const { ContextExclusionPlugin } = require('webpack');
 
 const PORT  = process.env.PORT || 5000;
 
@@ -41,19 +42,25 @@ app.post('/register', async (req, res) => {
         let hashed = await bcrypt.hash(password, 10);
         console.log(hashed);
         pool.query(
-            `SELECT * FROM users 
+            `SELECT * FROM public.users 
             WHERE email = $1`, 
             [email],
             (err, results) => {
-                if (err){
+                if(err){
                     throw err;
                 }
                 console.log("reaches here");
                 console.log(results.rows);
+
+                if(results.rows.length > 0) {
+                    res.sendFile('app/signUp.html', {root: __dirname});
+                    // res.send({
+                    //     message: "Email already exists"
+                    // });
+                }
             }
         );
 });
-
 
 app.listen(PORT, () =>{
     console.log(`server running on port ${PORT}`);
