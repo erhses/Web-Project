@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,36 +9,32 @@
   <title>Нэвтрэх</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <script defer="defer" src="main.2281425b0d28644fb548.js"></script>
-  <link href="styles/login.css" rel="stylesheet">
+  <link href="/app/assets/styles/styles.css" rel="stylesheet">
 </head>
 
 <body class="login">
   <div class="container" id="container">
     <div class="form-container sign-up-container">
+      <!-- Sign-up form (if needed) can go here -->
       <form action="#">
-    <div class="form-container sign-in-container">
-      <form action="login" method="POST">
-        <h1 class="login__h1">Sign in</h1>  
-        <!-- <div class="social-container">
-          <a class="login__a" href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-          <a class="login__a" href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-          <a class="login__a" href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-        </div> -->
-        <span class="login__span">or use your account</span>
-        <input class="login__input" type="email" placeholder="Email" id="email" required/>
-        <input class="login__input" type="password" placeholder="Password" id="password" required/>
-        <a class="login__a" href="#">Forgot your password?</a>
-        <button>Sign In</button>
+        <!-- Sign-up form content goes here -->
       </form>
     </div>
-    <div class="overlay-container">
-      <div class="overlay">
-        <div class="overlay-panel overlay-left">
-          <h1 class="login__h1">Welcome Back!</h1>
-          <p class="login__p">To keep connected with us please login with your personal info</p>
-          <button class="ghost" id="signIn">Sign In</button>
+    <div class="form-container sign-in-container">
+      <form action="/login" method="POST">
+        <h1 class="login__h1">Sign in</h1>
+        <span class="login__span">or use your account</span>
+        <input class="login__input" type="email" placeholder="Email" id="email" name="email" required />
+        <input class="login__input" type="password" placeholder="Password" id="password" name="password" required />
+        <a class="login__a" href="#">Forgot your password?</a>
+        <div>
+          <input type="submit" value="Login" />
         </div>
-        <a href="register">Sign Up Today</a>
+      </form>
+    </div>
+    <!-- Sign-up link goes here -->
+    <a href="/register">Sign Up Today</a>
+  </div>
 </body>
 
 </html>

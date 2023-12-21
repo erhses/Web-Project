@@ -5,19 +5,20 @@ const bcrypt = require("bcrypt");
 const { ContextExclusionPlugin } = require("webpack");
 const session = require("express-session");
 const flash = require("express-flash");
+require("dotenv").config();
 const passport = require("passport");   
 
 
-const initializePassport = require("./passportConfig");
-initializePassport(passport);
-const PORT  = process.env.PORT || 5000;
+const configurePassport = require("./passportConfig");
+configurePassport(passport);
 
-app.use('/app', express.static('app'));
-app.use(express.urlencoded({extended: false}));
+const PORT = 5000;
+
+app.use(express.urlencoded({ extended: false }));
 app.use(session({
     secret: "secret", 
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: true
 }));
 app.use(passport.initialize());
 
@@ -54,7 +55,7 @@ app.get('/logout', (req,res) => {
 
 app.post('/register', async (req, res) => {
     let { email, name, password, confirm_password } = req.body;
-    
+    let errors = [];
     console.log({
         name,
         email,
@@ -62,6 +63,21 @@ app.post('/register', async (req, res) => {
         confirm_password
     });
 
+    if (!name || !email || !password || !confirm_password) {
+        errors.push({ message: "Please enter all fields" });
+      }
+    
+      if (password.length < 6) {
+        errors.push({ message: "Password must be a least 6 characters long" });
+      }
+    
+      if (password !== confirm_password) {
+        errors.push({ message: "Passwords do not match" });
+      }
+    
+      if (errors.length > 0) {
+        res.redirect("/register");
+      }else{
         let hashed = await bcrypt.hash(password, 10);
         console.log(hashed);
         pool.query(
@@ -96,29 +112,32 @@ app.post('/register', async (req, res) => {
                 }
             }
         );
+      }
 });
 
 app.post(
-    "/login",
+    '/login',
     passport.authenticate("local", {
-      successRedirect: "/profile",
-      failureRedirect: "/login",
+      successRedirect: '/profile',
+      failureRedirect: '/login',
       failureFlash: true
     })
   );
 
 function checkAuthenticated(req, res, next) {
+  console.log("reaches check authen");
     if (req.isAuthenticated()) {
-      return res.redirect("/profile");
+      return res.redirect('/profile');
     }
     next();
   }
   
   function checkNotAuthenticated(req, res, next) {
+    console.log("reaches check not authen");
     if (req.isAuthenticated()) {
       return next();
     }
-    res.redirect("/login");
+    res.redirect('/login');
   }
 
 app.listen(PORT, () =>{
