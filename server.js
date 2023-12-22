@@ -6,8 +6,7 @@ const { ContextExclusionPlugin } = require("webpack");
 const session = require("express-session");
 const flash = require("express-flash");
 require("dotenv").config();
-const passport = require("passport");   
-
+const passport = require("passport"); 
 
 const configurePassport = require("./passportConfig");
 configurePassport(passport);
@@ -25,6 +24,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(flash());
+app.use("/app", express.static("app"));
 
 app.get('/', (req, res) => {
     res.sendFile('app/index.html', {root: __dirname })

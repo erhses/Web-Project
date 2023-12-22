@@ -6,8 +6,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description"
         content="Discover the perfect destination for your next adventure with our travel planner. Create personalized itineraries, find the best accommodations, and make unforgettable memories. Start planning today!">
-        <link rel="stylesheet" href="app/assets/styles/styles.css">
+        <link rel="stylesheet" href="/app/assets/styles/styles.css">
     <title>Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+<script src="https://api.mqcdn.com/sdk/leaflet/v2.2.0/mq-map.js"></script>
+<script src="/app/assets/scripts/modules/maps.js"></script>
+
 </head>
 
 <body style="background-color: white;">
@@ -44,6 +49,8 @@
                     this.title = card.title;
                     this.body = card.body;
                     this.link = card.link;
+                    this.long = card.long;
+                    this.lat = card.lat;
                     this.showRemoveButton = showRemoveButton;
                 }
 
@@ -95,6 +102,8 @@
             displaySelectedItems();
         </script>
     </main>
+    <div id="map" style="height: 400px; margin: 30px;" ></div>
+
     <footer>
         <div class="footer">
             <div class="footer__one">

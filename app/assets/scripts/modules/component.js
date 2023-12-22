@@ -23,7 +23,6 @@ class Cards {
         const prod = new Info(product);
         data += prod.render();
       }
-
       document
         .getElementById("cardsplease")
         .insertAdjacentHTML("beforeend", data);
@@ -38,6 +37,8 @@ class Info {
     this.title = card.title;
     this.body = card.body;
     this.link = card.link;
+    this.lat = card.lat;
+    this.long = card.long;
   }
 
   render() {
@@ -46,8 +47,10 @@ class Info {
           <div class="card__image__details">
             <p class="text__title">${this.title}</p>
             <p class="text__body">${this.body}</p>
+            <p class="text__body">${this.lat}</p>
+            <p class="text__body">${this.long}</p>
           </div>
-          <button class="card__image__button" onclick="addToSelected('${this.id}', '${this.title}', '${this.img}', '${this.body}', '${this.link}')">Add to List</button>
+          <button class="card__image__button" onclick="addToSelected('${this.id}', '${this.title}', '${this.img}', '${this.body}', '${this.link}', '${this.long}', '${this.lat}')">Add to List</button>
         </div>
       `;
   }
@@ -56,13 +59,16 @@ class Info {
 const cards = new Cards();
 cards.init();
 
-function addToSelected(id, title, img, body, link) {
+function addToSelected(id, title, img, body, link, lat, long) {
   const selectedItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
-  const isCardAlreadySelected = selectedItems.some(
-    (item) => item.id === id);
+  const isCardAlreadySelected = selectedItems.some((item) => item.id === id);
 
   if (!isCardAlreadySelected) {
-    selectedItems.push({id, title, img, body, link });
+    lat = parseFloat(lat);
+    long = parseFloat(long);
+    const itemToAdd = { id, title, img, body, link, lat, long };
+
+    selectedItems.push(itemToAdd);
     localStorage.setItem("selectedItems", JSON.stringify(selectedItems));
   }
 }
