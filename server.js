@@ -63,45 +63,26 @@ app.post('/register', async (req, res) => {
       password,
       confirm_password,
     });
-
-    if (!name || !email || !password || !confirm_password) {
-      errors.push({ message: 'Please enter all fields' });
-    }
-
-    if (password.length < 6) {
-      errors.push({ message: 'Password must be at least 6 characters long' });
-    }
-
-    if (password !== confirm_password) {
-      errors.push({ message: 'Passwords do not match' });
-    }
-
-    if (errors.length > 0) {
+    const results = await pool.query('SELECT * FROM public.users WHERE email = $1', [email]);
+    if (password !== confirm_password || results.rows.length > 0) {
+      console.log("dont match");
+      errors.push({ message: 'Please check Email and Password' });
+      errors.forEach(error => req.flash('error_msg', error.message));
+      console.log(errors);
       res.redirect('/register');
-    } else {
+      return;
+    }
       let hashed = await bcrypt.hash(password, 10);
-      console.log(hashed);
-
-      const results = await pool.query('SELECT * FROM public.users WHERE email = $1', [email]);
-      console.log('reaches here');
-      console.log(results.rows);
-
-      if (results.rows.length > 0) {
-        errors.push({ message: 'Email already exists' });
-        res.render('app/signUp.html', { root: __dirname, errors });
-      } else {
-        const result = await pool.query(
+      const result = await pool.query(
           'INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING id, password',
           [name, email, hashed]
         );
-        console.log(result.rows);
         req.flash('success_msg', 'Registered!');
         res.redirect('/login');
-      }
-    }
+    
   } catch (error) {
-    console.error(error);
-    res.status(500).send('Internal Server Error');
+    req.flash('error_msg', 'Internal Server Error');
+    res.redirect('/register');
   }
 });
 
@@ -115,7 +96,6 @@ app.post(
 );
 
 function checkAuthenticated(req, res, next) {
-  console.log('reaches check authen');
   if (req.isAuthenticated()) {
     return res.redirect('/profile');
   }
@@ -123,7 +103,6 @@ function checkAuthenticated(req, res, next) {
 }
 
 function checkNotAuthenticated(req, res, next) {
-  console.log('reaches check not authen');
   if (req.isAuthenticated()) {
     return next();
   }

@@ -17,9 +17,35 @@
       async function errorr(){
         const message = document.getElementById("message").value;
       }
+      const urlParams = new URLSearchParams(window.location.search);
+const errors = urlParams.get('errors');
+
+if (errors) {
+  const errorList = document.getElementById('error-messages');
+  errorList.innerHTML = '';
+  const errorArray = JSON.parse(errors);
+  errorArray.forEach(error => {
+    const errorItem = document.createElement('p');
+    errorItem.textContent = error.message;
+    errorList.appendChild(errorItem);
+  });
+}
+
+const successMessage = document.getElementById('success-message');
+const successMsg = urlParams.get('success_msg');
+
+if (successMsg) {
+  successMessage.textContent = successMsg;
+}
+
     </script>
   </head>
   <body>
+<section id="flash-messages">
+  <div id="error-messages" style="color: red;"></div>
+  <div id="success-message" style="color: green;"></div>
+</section>
+
     <section>
       <h1>Sign Up</h1>
       <p>
@@ -63,10 +89,6 @@
         /><br /><br />
         <input class="button" type="submit" value="Sign up"/>
       </form>
-      <p>or continue with</p>
-      <a href="#"><i class="fa fa-facebook"></i></a>
-      <a href="#"><i class="fa fa-apple"></i></a>
-      <a href="#"><i class="fa fa-envelope"></i></a>
     </section>
     <script src="bundled.js"></script>
   </body>
