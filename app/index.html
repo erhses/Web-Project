@@ -8,9 +8,9 @@
   <meta name="description"
     content="Discover the perfect destination for your next adventure with our travel planner. Create personalized itineraries, find the best accommodations, and make unforgettable memories. Start planning today!">
   <meta name="theme-color" content="#9B8DF1" />
-  <link rel="stylesheet" href="app/assets/styles/modules/index.css">
   <link rel="stylesheet" href="app/assets/styles/styles.css">
-  <link rel="stylesheet" href="app/assets/styles/modules/footer.css">
+  <!-- swiper css -->
+  <link rel="stylesheet" href="/app/assets/styles/swiper-bundle.min.css"> 
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> 
   <script src="app/assets/scripts/modules/component.js"></script>
   <script src="app/assets/scripts/modules/cards.json"></script>
@@ -75,11 +75,14 @@
       </div> 
     </section> -->
   <h2 class="section-title">Popular Locations</h2>
-  <section class="card" id="cardsplease">
-  </section>
-  <button id="checkSelected" onclick="redirectToSelected()">Check Selected <span id="checkSelectedBadge" class="badge"></span></button>
-<div id="notificationBadge"></div>
-
+  <div class="swiper mySwiper">
+    <section class="card swiper-wrapper" id="cardsplease">
+    </section>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <button id="checkSelected" onclick="redirectToSelected()">Check Selected</button>
   <main class="hero">
     <h2 class="hero-text"><span>Your</span> <span
         style="color: var(--secondary); border-bottom: 1px solid var(--secondary);">Amazing</span>
@@ -223,6 +226,22 @@
     </section>
     <p class="footer__end">&copy; 2023 copyright</p>
   </footer>
+  <script src="/app/assets/scripts/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 5,
+      loop: true,
+      slidesPerGroup: 5,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
   <script src="app/bundled.js"></script>
 </body>
 

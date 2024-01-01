@@ -6,26 +6,26 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description"
         content="Discover the perfect destination for your next adventure with our travel planner. Create personalized itineraries, find the best accommodations, and make unforgettable memories. Start planning today!">
-        <link rel="stylesheet" href="/app/assets/styles/styles.css">
+    <link rel="stylesheet" href="/app/assets/styles/styles.css">
     <title>Map</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
-<script src="https://api.mqcdn.com/sdk/leaflet/v2.2.0/mq-map.js"></script>
-<script src="/app/assets/scripts/modules/maps.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://api.mqcdn.com/sdk/leaflet/v2.2.0/mq-map.js"></script>
+    <script src="/app/assets/scripts/modules/maps.js"></script>
 
 </head>
 
 <body style="background-color: white;">
     <nav class="navigation">
         <section class="navigation__img"><a href="/"><img src="app/assets/images/image-removebg-preview.png" alt=""
-            style="width: 10rem;"></a></section>
+                    style="width: 10rem;"></a></section>
         <ul class="navigation__items">
             <li><a class="current" href="">Home</a></li>
             <li><a href="map">Explore</a></li>
             <li><a href="services">Services</a></li>
             <li class="dropdown"><a href="login">Login</a></li>
             <ul class="dropdown-content">
-                <li><a href="account">Profile</a></li>
+                <li><a href="profile">Profile</a></li>
                 <li><a href="login">Sign In</a></li>
                 <li><a href="register">Sign Up</a></li>
                 <li>Sign Out</li>
@@ -41,10 +41,10 @@
     <main style="margin-top: 100px;">
         <h1>Selected location</h1>
         <div id="selectedItems" class="card"></div>
-        <button onclick="removeAll()">Remove All</button>
+        <button onclick="removeAll()" id="removeall">Remove All</button>
         <script>
             class Info {
-                constructor(card, showRemoveButton) {   
+                constructor(card, showRemoveButton) {
                     this.img = card.img;
                     this.title = card.title;
                     this.body = card.body;
@@ -84,6 +84,12 @@
                         uniqueTitles.add(item.title);
                     }
                 }
+                const removeAllButton = document.getElementById('removeall');
+                if (!localStorage.getItem('selectedItems') || JSON.parse(localStorage.getItem('selectedItems')).length === 0) {
+                    removeAllButton.style.display = 'none';
+                } else {
+                    removeAllButton.style.display = 'block';
+                }
             }
 
             function removeAll() {
@@ -102,7 +108,7 @@
             displaySelectedItems();
         </script>
     </main>
-    <div id="map" style="height: 400px; margin: 30px;" ></div>
+    <div id="map" style="height: 400px; margin: 30px;"></div>
 
     <footer>
         <div class="footer">

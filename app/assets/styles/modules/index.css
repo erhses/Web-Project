@@ -20,8 +20,18 @@ area:hover {
 }
 
 .card {
+  display: flex; 
+}
+.swiper-slide {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.swiper {
+  width: 100%;
+  height: 100%; 
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .card__image {
@@ -143,13 +153,13 @@ area:hover {
   display: flex;
   justify-content: space-evenly;
 }
-.review__card{
+.review__card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
   max-width: 320px;
-  border: solid 1px var(--secodary);  
+  border: solid 1px var(--secodary);
 }
 .review__card__stars {
   display: flex;
@@ -184,5 +194,5 @@ area:hover {
 
 :root {
   --primary: #252525;
-  --secondary: #9B8DF1;
+  --secondary: #9b8df1;
 }

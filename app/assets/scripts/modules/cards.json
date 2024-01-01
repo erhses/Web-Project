@@ -25,5 +25,32 @@
 		"link": "#",
 		"lat" : 48.090419,
 		"long" : 93.228241
+	},
+	{
+		"id": "4",
+		"img": "app/assets/images/harnuur.png",
+		"title": "Хар нуур",
+		"body": "harnuur",
+		"link": "#",
+		"lat" : 48.090419,
+		"long" : 93.228241
+	},
+	{
+		"id": "5",
+		"img": "app/assets/images/harnuur.png",
+		"title": "Хар нуур",
+		"body": "harnuur",
+		"link": "#",
+		"lat" : 48.090419,
+		"long" : 93.228241
+	},
+	{
+		"id": "6",
+		"img": "app/assets/images/harnuur.png",
+		"title": "Хар нуур",
+		"body": "harnuur",
+		"link": "#",
+		"lat" : 48.090419,
+		"long" : 93.228241
 	}
 ]

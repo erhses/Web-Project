@@ -43,6 +43,7 @@ class Info {
 
   render() {
     return `
+    <div class="swiper-slide">
         <div class="card__image" style="background-image: url('${this.img}') ;" id="${this.id}">
           <div class="card__image__details">
             <p class="text__title">${this.title}</p>
@@ -51,6 +52,7 @@ class Info {
             <p class="text__body">${this.long}</p>
           </div>
           <button class="card__image__button" onclick="addToSelected('${this.id}', '${this.title}', '${this.img}', '${this.body}', '${this.link}', '${this.long}', '${this.lat}')">Add to List</button>
+        </div>
         </div>
       `;
   }
