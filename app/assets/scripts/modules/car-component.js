@@ -1,25 +1,62 @@
-import { fetchData } from "app/assets/scripts/modules/fetchData.js";
+import { fetchData } from "./fetchData.js";
+
+// const template = document.createElement("template");
+
+// template.innerHTML = `
+//             <link rel="stylesheet" href="./styles/menu.css"/>
+//             <a role="button" id="" class="product-item">
+//                   <img class="product-image" height="200">
+//                   <h2 class="product-title"></h2>
+//                   <h4 class="product-calories"></h4>
+//                   <p class="product-description"></p>
+//             </a>
+// `;
 
 const jsondata = await fetchData();
 const carList = jsondata.record.carList;
 class CarComponent extends HTMLElement {
     constructor() {
         super();
-        this.renderCars();
+        // this.attachShadow({ mode: "open" });
+        // this.shadowRoot.appendChild(template.content.cloneNode(true))
     }
-
+    
+    /* dark mode */
+    setupColor() {
+        const colorScheme = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        this.setTheme(colorScheme);
+        
+        const handleColorChange = (e) => this.setTheme(e.matches ? "dark" : "light");
+        
+        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", handleColorChange);
+        handleColorChange(window.matchMedia("(prefers-color-scheme: dark)"));
+    }
+    setTheme(colorScheme) {
+        const root = document.documentElement;
+    
+        if (colorScheme === "dark") {
+            root.style.setProperty('--background-color', '#695a5a');
+            root.style.setProperty('--text-color', '#fff');
+            console.log("Color Scheme Changed to :", colorScheme);
+        } else {
+            root.style.setProperty('--background-color', '#fff');
+            root.style.setProperty('--text-color', '#000');
+            console.log("Color Scheme Changed to :", colorScheme);
+        }
+    }
+    /* dark mode ends */
+    
     renderCars() {
         const carContainer = document.querySelector('.car');
         let html = '';
-
         carList.forEach(car => {
-            console.log(car);
+            // console.log(car);
             html += this.#render(car);
         });
 
         carContainer.innerHTML = html;
     }
-
+    
     #render(car) {
         this.id = car.id;
         this.name = car.name;
@@ -31,56 +68,91 @@ class CarComponent extends HTMLElement {
         this.feature = car.feature;
         this.price = {}; // Initialize price as an object
         this.price.day = car.price.day;
-        this.price.total = car.price.total;
+        // this.price.total = car.price.total;
+        
+        /* calculate total price */
+        const dateOneInput = document.getElementById("dateOne");
+        const dateTwoInput = document.getElementById("dateTwo");
+
+        // Get the date values from the input elements
+        const dateOne = new Date(dateOneInput.value);
+        const dateTwo = new Date(dateTwoInput.value);
+
+        // Calculate the date difference in days
+        const timeDifference = dateTwo.getTime() - dateOne.getTime();
+        const daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+
+        // Calculate the total price for the current car
+        const totalPrice = daysDifference * this.price.day;
+        
+        /* calculate total price ends*/
+        
         return `
 		<div class="car__card" data-category="${this.type}">
             <h4>${this.name}</h4>
-            <img src="${this.image}" width="320px" height="240px" alt="${this.name}">
+            <img src="app/${this.image}" alt="${this.name}">
             <section class="car__card__container">
                 <div class="foot">
                     <div class="sda">
-                        <img src="assets/images/seat.png" alt="">
+                        <img src="app/assets/images/seat.png" alt="">
                         <span>${this.seats} seat</span>
                     </div>
                     <div class="sda">
-                        <img src="assets/images/miles.png" alt="">
+                        <img src="app/assets/images/miles.png" alt="">
                         <span>${this.mileage}</span>
                     </div>
                     <div class="sda">
-                        <img src="assets/images/30kml.png" alt="">
+                        <img src="app/assets/images/30kml.png" alt="">
                         <span>${this.fuelEfficiency}</span>
                     </div>
                     <div class="sda">
-                        <img src="assets/images/gps.png" alt="">
+                        <img src="app/assets/images/gps.png" alt="">
                         <span>${this.feature}</span>
                     </div>
                 </div>
                 <div class="car-container">
                     <div class="price">
-                        <div class="day">$${this.price.day}</div>
-                        <div class="total">$${this.price.total}</div>
+                        <div class="day">$${this.price.day} day</div>
+                        <div class="total">$${totalPrice} total</div>
                     </div>
                     <car-save-button carId=${this.id} isClicked=${false} carName=${this.name}></car-save-button>
                     <car-button carId=${this.id} isClicked=${false} carName=${this.name}></car-button>
-                </div>
+                    </div>
             </section>
-        </div>`;
+        </div>`;    
+    }
+
+    // Specify observed attributes for attributeChangedCallback
+    static get observedAttributes() {
+        return ['carId', 'carName'];
     }
     
-
     connectedCallback() {
-        //implementation
+        console.log("Connected Callback");
+        this.renderCars();
+        const searchButton = document.getElementById("sda123");
+        searchButton.addEventListener("click", () => {
+            this.renderCars();
+        });
+
+        this.setupColor();
     }
 
     disconnectedCallback() {
+        console.log("Disconnected Callback");
         //implementation
     }
-
+    
     attributeChangedCallback(name, oldVal, newVal) {
-        //implementation
+        console.log(`Attribute "${name}" changed from ${oldVal} to ${newVal}`);
+        // Handle changes related to carId or carName attributes
+        if (name === 'carId' || name === 'carName') {
+            this.renderCars();
+        }
     }
 
     adoptedCallback() {
+        console.log("Adopted Callback");
         //implementation
     }
 

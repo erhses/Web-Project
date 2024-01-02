@@ -17,27 +17,7 @@
     <script src="/app/assets/scripts/swiper-bundle.min.js"></script>
 </head>
 <body style="background-color: white;">
-    <nav class="navigation">
-        <section class="navigation__img"><a href="/"><img src="app/assets/images/image-removebg-preview.png" alt=""
-                    style="width: 10rem;"></a></section>
-        <ul class="navigation__items">
-            <li><a class="current" href="">Home</a></li>
-            <li><a href="map">Explore</a></li>
-            <li><a href="services">Services</a></li>
-            <li class="dropdown"><a href="login">Login</a></li>
-            <ul class="dropdown-content">
-                <li><a href="profile">Profile</a></li>
-                <li><a href="login">Sign In</a></li>
-                <li><a href="register">Sign Up</a></li>
-                <li>Sign Out</li>
-            </ul>
-        </ul>
-        <div class="hamburger-menu">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-    </nav>
+    <header-component></header-component>
 
     <main style="margin-top: 100px;">
         <h1 class="section-title">Selected Locations</h1>
@@ -52,27 +32,8 @@
     </main>
     <div id="map" style="height: 500px; margin: 30px;"></div>
 
-    <footer>
-        <div class="footer">
-            <div class="footer__one">
-                <h3>Санал хүсэлт үлдээх хэсэг</h3><input class="input" type="email" name="email"
-                    placeholder="Enter your email"> <textarea name="textarea" class="textarea" cols="30" rows="10"
-                    placeholder="Enter your comment"></textarea><br><button type="submit">submit</button>
-            </div>
-            <div class="footer__two">
-                <h3>About Us</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptas dolorum vitae neque, a
-                    nesciunt, consectetur voluptatibus nemo, earum esse mollitia debitis tempora! Adipisci blanditiis,
-                    ut vitae quasi iusto nobis.</p>
-            </div>
-            <div class="footer__three">
-                <h3>Contact Us</h3>
-                <p>976 9999 9999</p>
-                <p>nomail.com</p>
-            </div>
-        </div>
-        <p class="footer__end">&copy; 2023 copyright</p>
-    </footer>
+    <footer-component></footer-component>
+
     <script src="app/bundled.js"></script>
     <script>
         var swiper = new Swiper(".mySwiper", {
@@ -89,6 +50,10 @@
       },
     });
       </script>
+      
+      <script type="module" src="app/assets/scripts/modules/header-component.js"></script>
+      <script type="module" src="app/assets/scripts/modules/footer-component.js"></script>
+
 </body>
 
 </html>
