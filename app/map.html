@@ -29,14 +29,32 @@
             <div class="swiper-pagination"></div>
           </div>
         <button onclick="removeAll()" id="removeall" class="checksel">Remove All</button>
-        <button onclick="saveTrips()" class="checksel">Save Trip</button>
         <script src="/app/assets/scripts/modules/component.js"></script>
     </main>
     <div id="map" style="height: 500px; margin: 30px;"></div>
 
-    <footer-component></footer-component>
-
-    <script src="app/bundled.js"></script>
+    <footer>
+        <div class="footer">
+            <div class="footer__one">
+                <h3>Suggestions</h3><input class="input" type="email" name="email" placeholder="Enter your email">
+                <textarea name="textarea" class="textarea" cols="30" rows="10"
+                    placeholder="Enter your comment"></textarea><br><button type="submit">submit</button>
+            </div>
+            <div class="footer__two">
+                <h3>About Us</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptas dolorum vitae neque, a
+                    nesciunt, consectetur voluptatibus nemo, earum esse mollitia debitis tempora! Adipisci blanditiis,
+                    ut vitae quasi iusto nobis.</p>
+            </div>
+            <div class="footer__three">
+                <h3>Contact Us</h3>
+                <p>976 9999 9999</p>
+                <p>nomail.com</p>
+            </div>
+        </div>
+        <p class="footer__end">&copy; 2023 copyright</p>
+    </footer>
+    <script src="/app/assets/scripts/swiper-bundle.min.js"></script>
     <script>
         var swiper = new Swiper(".mySwiper", {
             slidesPerView: 5,
@@ -53,6 +71,10 @@
         });
     </script>
     <script src="app/bundled.js"></script>
+    
+  <script type="module" src="app/assets/scripts/modules/header-component.js"></script>
+  <script type="module" src="app/assets/scripts/modules/footer-component.js"></script>
+
 </body>
 
 </html>
