@@ -32,11 +32,12 @@ function addMarkersAndDrawRoute(map) {
             routeWhileDragging: true,
             router: L.Routing.mapbox('pk.eyJ1IjoiZXJoc2VzIiwiYSI6ImNscXZ4cXgxdTUxd3oya280YjQ5ZDU4NTMifQ.BypQD2x71oOXPLpGmWp7ew'),
             lineOptions: {
-                styles: [{ color: '#3388ff', opacity: 1, weight: 5 }]
+                styles: [{ color: 'var(--secondary)', opacity: 1, weight: 5 }]
             },
             createMarker: function (i, waypoint, n) {
                 return L.marker(waypoint.latLng, {
-                    draggable: true
+                    draggable: true,
+                    icon: L.divIcon({ className: 'leaflet-div-icon', html: '<span>' + (i + 1) + '</span>' })
                 });
             }
         })

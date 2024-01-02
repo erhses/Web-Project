@@ -14,8 +14,8 @@
 <body style="background-color: white;">
     <header class="profile">
         <nav class="navigation">
-            <section class="navigation__img"><a href="/"><img src="app/assets/images/image-removebg-preview.png"
-                        alt="" style="width: 10rem;"></a></section>
+            <section class="navigation__img"><a href="/"><img src="app/assets/images/findme.png"
+                        alt="" style="width: 5rem;"></a></section>
             <div class="main_list" id="mainList">
                 <ul class="navigation__items">
                     <li><a class="current" href="/">Home</a></li>
@@ -45,28 +45,15 @@
         </section>
     </header>
     <main>
-        <article class="profile-container">
-            <ul>
-                <li><a href="#">trips</a></li>
-                <li><a href="#">review</a></li>
-            </ul>
-        </article>
-        <ul class="profile-trips">
-            <li>
-                <h3>Altai tavan bogd trip</h3>
-                <img src="app/assets/images/img.png" alt="">
-                <div class="foot">
-                    <p>2 places</p>
-                    <p>3 day 12 hours</p>
-                    <p>1682 km</p>
-                </div>
-            </li>
-        </ul>
+        <section class="saved-trips">
+            <h2>Saved Trips</h2>
+            <ul id="savedTripsList"></ul>
+          </section>
     </main>
     <footer>
         <div class="footer">
             <div class="footer__one">
-                <h3>Санал хүсэлт үлдээх хэсэг</h3>
+                <h3>Suggestions</h3>
                 <input class="input" type="email" name="email" placeholder="Enter your email">
                 <textarea name="textarea" class="textarea" cols="30" rows="10"
                     placeholder="Enter your comment"></textarea><br>

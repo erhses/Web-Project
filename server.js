@@ -4,7 +4,6 @@ const { pool } = require('./dbConfig');
 const bcrypt = require('bcrypt');
 const session = require('express-session');
 const flash = require('express-flash');
-require('dotenv').config();
 const passport = require('passport');
 
 const configurePassport = require('./passportConfig');

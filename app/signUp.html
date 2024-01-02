@@ -1,95 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Sign up for a new account at YourWebsite. Register with your email and password."
-    />
-    <meta
-      name="keywords"
-      content="sign up, create account, registration, email, password"
-    />
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="css/signup.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script>
-      async function errorr(){
-        const message = document.getElementById("message").value;
-      }
-      const urlParams = new URLSearchParams(window.location.search);
-const errors = urlParams.get('errors');
 
-if (errors) {
-  const errorList = document.getElementById('error-messages');
-  errorList.innerHTML = '';
-  const errorArray = JSON.parse(errors);
-  errorArray.forEach(error => {
-    const errorItem = document.createElement('p');
-    errorItem.textContent = error.message;
-    errorList.appendChild(errorItem);
-  });
-}
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sign up for a new account at YourWebsite. Register with your email and password." />
+  <meta name="keywords" content="sign up, create account, registration, email, password" />
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="/app/assets/styles/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-const successMessage = document.getElementById('success-message');
-const successMsg = urlParams.get('success_msg');
+</head>
 
-if (successMsg) {
-  successMessage.textContent = successMsg;
-}
+<body>
+  <header style="margin: 0;">
+    <nav class="navigation">
+      <section class="navigation__img"><a href=""><img src="app/assets/images/findme.png" alt=""
+            style="width: 5rem;"></a></section>
+      <div class="main_list" id="mainList">
+        <ul class="navigation__items">
+          <li><a class="current" href="/">Home</a></li>
+          <li><a href="map">Explore</a></li>
+          <li><a href="services">Services</a></li>
+          <li><a href="login">Login</a>
+            <ul>
+              <li><a href="profile">Profile</a></li>
+              <li><a href="login">Sign In</a></li>
+              <li><a href="register">Sign Up</a></li>
+              <li>Sign Out</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="media_button">
+        <button class="main_media_button" id="media">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
 
-    </script>
-  </head>
-  <body>
-<section id="flash-messages">
-  <div id="error-messages" style="color: red;"></div>
-  <div id="success-message" style="color: green;"></div>
-</section>
-
-    <section>
-      <h1>Sign Up</h1>
+    <section class="container">
+      <h1 class="login__h1">Sign Up</h1>
       <p>
         If you already have an account, <a href="login">Sign in here!</a>
       </p>
-      <span id="message"></span>
       <form action="register" method="POST">
-        <label for="email">Email</label><br />
-        <input class="inputt"
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Enter your email account"  
-          required
-        /><br /><br />
-        <label for="name">username</label><br />
-        <input class="inputt"
-          type="text"
-          name="name"
-          id="name"
-          placeholder="Enter your Username"
-          required
-        /><br /><br />
-        <label for="password">Password</label><br />
-        <input class="inputt"
-          type="password"
-          name="password"
-          id="password"
-          minlength="8"
-          placeholder="Enter your password"
-          required
-        /><br /><br />
-        <label for="confirm_password">Confirm Password</label><br />
-        <input class="inputt"
-          type="password"
-          name="confirm_password"
-          id="confirm_password"
-          minlength="8"
-          placeholder="Confirm your password"
-          required
-        /><br /><br />
-        <input class="button" type="submit" value="Sign up"/>
+        <input class="login__input" type="email" name="email" id="email" placeholder="Enter your email account"
+          required />
+        <input class="login__input" type="text" name="name" id="name" placeholder="Enter your Username" required />
+        <input class="login__input" type="password" name="password" id="password" minlength="8"
+          placeholder="Enter your password" required />
+        <input class="login__input" type="password" name="confirm_password" id="confirm_password" minlength="8"
+          placeholder="Confirm your password" required />
+        <input class="loginbutton" type="submit" value="Sign up" />
       </form>
     </section>
-    <script src="bundled.js"></script>
-  </body>
+  <script src="bundled.js"></script>
+</body>
+
 </html>
