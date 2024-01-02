@@ -5,17 +5,17 @@
 		"title": "Завхан",
 		"body": "zawhan zawhan zawhan zawhan",
 		"link": "#",
-		"lat" : 47.742778,
-		"long" : 96.843333
-	},
+		"lat" : 47.740772,
+		"long" :96.849706 
+	}, 
 	{
 		"id": "2",
 		"img": "app/assets/images/boshloi.png",
 		"title": "Бошлой",
 		"body": "boshloi boshloi boshloi",
 		"link": "#",
-		"lat" : "",
-		"long" : ""
+		"lat" : 47.486557,
+		"long" : 96.816637
 	},
 	{
 		"id": "3",
@@ -23,8 +23,8 @@
 		"title": "Хар нуур",
 		"body": "harnuur",
 		"link": "#",
-		"lat" : 48.090419,
-		"long" : 93.228241
+		"lat" : 47.907186,
+		"long" : 91.817394
 	},
 	{
 		"id": "4",
