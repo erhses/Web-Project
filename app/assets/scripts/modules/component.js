@@ -97,3 +97,67 @@ function redirectToSelected() {
     alert("Please select at least one item before checking selected items.");
   }
 }
+
+class Selected {
+  constructor(card, showRemoveButton) {
+      this.img = card.img;
+      this.title = card.title;
+      this.body = card.body;
+      this.link = card.link;
+      this.long = card.long;
+      this.lat = card.lat;
+      this.showRemoveButton = showRemoveButton;
+  }
+
+  render() {
+      return `
+          <div class="card__image" style="background-image: url(${this.img});">
+              <div class="card__image__details">
+                  <p class="text__title">${this.title}</p>
+                  <p class="text__body">${this.body}</p>
+              </div>
+              ${this.showRemoveButton ? `<button class="card__image__button" style="background-color: red;" onclick="removeItem('${this.title}')">Remove from List</button>` : ''}
+          </div>
+      `;
+  }
+}
+
+function displaySelectedItems() {
+  const selectedItems = JSON.parse(localStorage.getItem('selectedItems')) || [];
+  const selectedItemsContainer = document.getElementById('selectedItems');
+
+  selectedItemsContainer.innerHTML = '';
+  const uniqueTitles = new Set();
+  for (const item of selectedItems) {
+      if (!uniqueTitles.has(item.title)) {
+          const itemContainer = document.createElement('div');
+          itemContainer.classList.add('selected-item');
+
+          const prod = new Selected(item, true);
+          itemContainer.innerHTML = prod.render();
+          selectedItemsContainer.appendChild(itemContainer);
+          uniqueTitles.add(item.title);
+      }
+  }
+  const removeAllButton = document.getElementById('removeall');
+  if (!localStorage.getItem('selectedItems') || JSON.parse(localStorage.getItem('selectedItems')).length === 0) {
+      removeAllButton.style.display = 'none';
+  } else {
+      removeAllButton.style.display = 'block';
+  }
+}
+
+function removeAll() {
+  localStorage.removeItem('selectedItems');
+  displaySelectedItems();
+}
+
+function removeItem(title) {
+  const selectedItems = JSON.parse(localStorage.getItem('selectedItems')) || [];
+  const updatedItems = selectedItems.filter((item) => item.title !== title);
+
+  localStorage.setItem('selectedItems', JSON.stringify(updatedItems));
+  displaySelectedItems();
+}
+
+displaySelectedItems();
