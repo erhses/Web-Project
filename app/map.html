@@ -13,8 +13,9 @@
     <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
     <script src="/app/assets/scripts/modules/maps.js"></script>
 
+    <link rel="stylesheet" href="/app/assets/styles/swiper-bundle.min.css">
+    <script src="/app/assets/scripts/swiper-bundle.min.js"></script>
 </head>
-
 <body style="background-color: white;">
     <nav class="navigation">
         <section class="navigation__img"><a href="/"><img src="app/assets/images/image-removebg-preview.png" alt=""
@@ -40,11 +41,16 @@
 
     <main style="margin-top: 100px;">
         <h1 class="section-title">Selected Locations</h1>
-        <div id="selectedItems" class="card"></div>
-        <button onclick="removeAll()" id="removeall">Remove All</button>
+        <div class="swiper mySwiper">
+            <div id="selectedItems" class="card"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <button onclick="removeAll()" id="removeall" class="checksel">Remove All</button>
         <script src="/app/assets/scripts/modules/component.js"></script>
     </main>
-    <div id="map" style="height: 400px; margin: 30px;"></div>
+    <div id="map" style="height: 500px; margin: 30px;"></div>
 
     <footer>
         <div class="footer">
@@ -68,6 +74,21 @@
         <p class="footer__end">&copy; 2023 copyright</p>
     </footer>
     <script src="app/bundled.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 5,
+      loop: true,
+      slidesPerGroup: 5,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+      </script>
 </body>
 
 </html>

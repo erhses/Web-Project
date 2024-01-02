@@ -1,56 +1,101 @@
 [
 	{
 		"id": "1",
-		"img": "app/assets/images/zawhan.png",
-		"title": "Завхан",
-		"body": "zawhan zawhan zawhan zawhan",
+		"img": "app/assets/images/terelj.jpeg",
+		"title": "Gorkhi Terelj National Park",
+		"body": "GORKHI-TERELJ National Park is considered one of the most beautiful worth visiting places for travelers who wanted to rest in surroundings near UB",
 		"link": "#",
-		"lat" : 47.740772,
-		"long" :96.849706 
+		"lat" : 48.16889922935316,
+		"long" :107.73633898917058
 	}, 
 	{
 		"id": "2",
-		"img": "app/assets/images/boshloi.png",
-		"title": "Бошлой",
-		"body": "boshloi boshloi boshloi",
+		"img": "app/assets/images/gobi.jpg",
+		"title": "Gobi Desert",
+		"body": "The Gobi Desert is a vast, arid region in northern China and southern Mongolia.",
 		"link": "#",
-		"lat" : 47.486557,
-		"long" : 96.816637
+		"lat" : 42.7952,
+		"long" : 105.0324
 	},
 	{
 		"id": "3",
-		"img": "app/assets/images/umnugobi.png",
-		"title": "Хар нуур",
-		"body": "harnuur",
+		"img": "app/assets/images/khuvsgul.heic",
+		"title": "Khuvsgul Lake",
+		"body": "The largest freshwater lake in Mongolia by volume and second largest by area after Uvs Lake.",
 		"link": "#",
-		"lat" : 47.907186,
-		"long" : 91.817394
+		"lat" : 50.978933,
+		"long" : 100.502277
 	},
 	{
 		"id": "4",
 		"img": "app/assets/images/harnuur.png",
 		"title": "Хар нуур",
-		"body": "harnuur",
+		"body": "Ulaagchnii Khar Nuur lake is considered as one of the oldest lakes in the world, surrounded by golden sand dunes and snow caped Mt. Otgon Tenger.",
 		"link": "#",
 		"lat" : 48.090419,
 		"long" : 93.228241
 	},
 	{
 		"id": "5",
-		"img": "app/assets/images/harnuur.png",
-		"title": "Хар нуур",
-		"body": "harnuur",
+		"img": "app/assets/images/boshloi.png",
+		"title": "Boshloi Rock",
+		"body": "Just a rock",
 		"link": "#",
-		"lat" : 48.090419,
-		"long" : 93.228241
+		"lat" : 50.173684759902045,
+		"long" : 98.97207963175128
 	},
 	{
 		"id": "6",
-		"img": "app/assets/images/harnuur.png",
-		"title": "Хар нуур",
+		"img": "app/assets/images/darkhad.heic",
+		"title": "Darkhad Valley",
 		"body": "harnuur",
 		"link": "#",
-		"lat" : 48.090419,
-		"long" : 93.228241
+		"lat" : 51.176422574248235,
+		"long" : 99.50237340524727
+	},
+	{
+		"id": "7",
+		"img": "app/assets/images/khoridol.heic",
+		"title": "Khoridol Saridag",
+		"body": "The Khoridol Saridag mountains are a 150 km-long mountain range in Khövsgöl aimag, Mongolia, between Khövsgöl nuur and the Darkhad valley.",
+		"link": "#",
+		"lat" : 51.176422574248235,
+		"long" : 99.50237340524727
+	},
+	{
+		"id": "8",
+		"img": "app/assets/images/altai5.heic",
+		"title": "Altai Tavan Bogd",
+		"body": "The Tavan Bogd is a mountain massif in Mongolia, near the triple border with China and Russia.",
+		"link": "#",
+		"lat" : 48.51297697399174, 
+		"long" : 88.72157253384765
+	},
+	{
+		"id": "9",
+		"img": "app/assets/images/ulaan.webp",
+		"title": "Ulaan Tsutgalan",
+		"body": "Waterfall Ulaan Tsutgalan is located at the historically important Orkhon valley with volcanic rocks in central Mongolia.",
+		"link": "#",
+		"lat" : 46.78833449313296, 
+		"long" : 101.96000890568745 
+	},
+	{
+		"id": "10",
+		"img": "app/assets/images/san.webp",
+		"title": "Sangiin Dalai Lake",
+		"body": "Sangiin Dalai Lake (Mongolian: Сангийн далай нуур) is a salt water lake in northern Mongolia.",
+		"link": "#",
+		"lat" : 49.269093730986874, 
+		"long" : 98.98878628760967
+	},
+	{
+		"id": "11",
+		"img": "app/assets/images/chuluu.webp",
+		"title": "Ikh Gazriin Chuluu",
+		"body": "Ikh Gazriin Chuluu is the largest part of the granite area of Mongolia.",
+		"link": "#",
+		"lat" : 45.498485707720704,
+		"long" : 107.23059748095497 
 	}
 ]

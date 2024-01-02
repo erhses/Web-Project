@@ -2,6 +2,9 @@
   margin-left: 2rem;
   color: var(--secondary);
 }
+.leaflet-control-container .leaflet-routing-container-hide {
+  display: none;
+}
 
 .card {
   display: flex; 
@@ -28,22 +31,26 @@
   position: relative;
   transition: 0.5s ease-out;
   width: 190px;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .card__image__details {
   color: white;
   display: grid;
-  gap: 0.5em;
+  /* gap: 0.5em; */
   height: 100%;
   place-content: end left;
 }
 
 .card__image__details .text__body {
   color: white;
+  font-size: 0.8em;
 }
 
 .card__image__details .text__title {
-  font-size: 1.5em;
+  font-size: 1em;
   font-weight: 700;
 }
 
@@ -73,6 +80,7 @@
   cursor: pointer;
   font-size: 1em;
   padding: 1em;
+  margin: 2em;
 }
 
 .card__image:hover {

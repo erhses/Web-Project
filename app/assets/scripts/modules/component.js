@@ -48,8 +48,6 @@ class Info {
           <div class="card__image__details">
             <p class="text__title">${this.title}</p>
             <p class="text__body">${this.body}</p>
-            <p class="text__body">${this.lat}</p>
-            <p class="text__body">${this.long}</p>
           </div>
           <button class="card__image__button" onclick="addToSelected('${this.id}', '${this.title}', '${this.img}', '${this.body}', '${this.link}', '${this.long}', '${this.lat}')">Add to List</button>
         </div>

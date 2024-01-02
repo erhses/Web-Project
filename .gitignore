@@ -2,5 +2,6 @@ node_modules/
 Thumbs.db
 *.log
 .cache
-dbConfig.js
+/dbConfig.js
 .env
+/app/styles/swiper-bundle.min.css

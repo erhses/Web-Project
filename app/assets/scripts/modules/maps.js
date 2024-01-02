@@ -27,25 +27,21 @@ function addMarkersAndDrawRoute(map) {
             return L.latLng(latLng[0], latLng[1]);
         });
 
-        L.Routing.control({
+        var control = L.Routing.control({
             waypoints: waypoints,
             routeWhileDragging: true,
-            show: true,
-            router: L.Routing.mapbox('pk.eyJ1IjoiZXJoc2VzIiwiYSI6ImNscXZ4cXgxdTUxd3oya280YjQ5ZDU4NTMifQ.BypQD2x71oOXPLpGmWp7ew'), //api key for mapbox
+            router: L.Routing.mapbox('pk.eyJ1IjoiZXJoc2VzIiwiYSI6ImNscXZ4cXgxdTUxd3oya280YjQ5ZDU4NTMifQ.BypQD2x71oOXPLpGmWp7ew'),
+            lineOptions: {
+                styles: [{ color: '#3388ff', opacity: 1, weight: 5 }]
+            },
             createMarker: function (i, waypoint, n) {
                 return L.marker(waypoint.latLng, {
-                    draggable: true,
-                    icon: L.divIcon({ className: 'leaflet-div-icon', html: '<span>' + (i + 1) + '</span>' })
+                    draggable: true
                 });
             }
         })
-        .on('routesfound', function(e) {
-            console.log('Routes found:', e.routes);
-        })
-        .on('routingerror', function(e) {
-            console.error('Routing error:', e.error);
-        })
         .addTo(map);
+        control.hide();
     }
 }
 
