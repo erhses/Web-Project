@@ -1,58 +1,59 @@
-class Car {
-	constructor(car) {
-		this.id = car.id;
-		this.name = car.name;
-		this.image = car.image;
-		this.type = car.type;
-		this.seats = car.seats;
-		this.mileage = car.mileage;
-		this.fuelEfficiency = car.fuelEfficiency;
-		this.feature = car.feature;
-		this.price = {}; // Initialize price as an object
-		this.price.day = car.price.day;
-		this.price.total = car.price.total;
+	class Car {
+		constructor(car) {
+			this.id = car.id;
+			this.name = car.name;
+			this.image = car.image;
+			this.type = car.type;
+			this.seats = car.seats;
+			this.mileage = car.mileage;
+			this.fuelEfficiency = car.fuelEfficiency;
+			this.feature = car.feature;
+			this.price = {}; // Initialize price as an object
+			this.price.day = car.price.day;
+			this.price.total = car.price.total;
+		}
+
+		Render() {
+			return `
+			
+			<div class="car__card" data-category="${this.type}">
+		<h4>${this.name}</h4>
+		<img src="${this.image}" width="320px" height="240px" alt="${this.name}">
+		<section class="car__card__container">
+			<div class="foot">
+			<div class="sda">
+				<img src="assets/images/seat.png" alt="">
+				<span>${this.seats} seat</span>
+			</div>
+			<div class="sda">
+				<img src="assets/images/miles.png" alt="">
+				<span>${this.mileage}</span>
+			</div>
+			<div class="sda">
+				<img src="assets/images/30kml.png" alt="">
+				<span>${this.fuelEfficiency}</span>
+			</div>
+			<div class="sda">
+				<img src="assets/images/gps.png" alt="">
+				<span>${this.feature}</span>
+			</div>
+			</div>
+			<div class="car-container">
+			<div class="price">
+				<div class="day">$${this.price.day}</div>
+				<div class="total">$${this.price.total}</div>
+			</div>
+			</div>
+			<button class="rent-now">Rent now</button>
+		</section>
+		</div>`;
+		}
 	}
 
-	Render() {
-		return `
-		
-		<div class="car__card" data-category="${this.type}">
-      <h4>${this.name}</h4>
-      <img src="${this.image}" width="320px" height="240px" alt="${this.name}">
-      <section class="car__card__container">
-        <div class="foot">
-          <div class="sda">
-            <img src="assets/images/seat.png" alt="">
-            <span>${this.seats} seat</span>
-          </div>
-          <div class="sda">
-            <img src="assets/images/miles.png" alt="">
-            <span>${this.mileage}</span>
-          </div>
-          <div class="sda">
-            <img src="assets/images/30kml.png" alt="">
-            <span>${this.fuelEfficiency}</span>
-          </div>
-          <div class="sda">
-            <img src="assets/images/gps.png" alt="">
-            <span>${this.feature}</span>
-          </div>
-        </div>
-        <div class="car-container">
-          <div class="price">
-            <div class="day">$${this.price.day}</div>
-            <div class="total">$${this.price.total}</div>
-          </div>
-          <button class="rent-now">Rent now</button>
-      </section>
-    </div>`;
-	}
-}
-
-class CarList {
-	constructor() {
-		this.cars = [];
-	}
+	class CarList {
+		constructor() {
+			this.cars = [];
+		}
 
 	async FetchData() {
 		this.cars = [
@@ -182,59 +183,59 @@ document.addEventListener("DOMContentLoaded", async () => {
     const carContainer = document.querySelector('.car');
     const categorySection = document.querySelector('.category');
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const initialCategory = urlParams.get('category');
+		const urlParams = new URLSearchParams(window.location.search);
+		const initialCategory = urlParams.get('category');
 
     const CarListInstance = new CarList();
     await CarListInstance.FetchData();
 
-    // Filter and render cars based on the initial category from the URL
-    if (initialCategory) {
-        const checkboxes = document.querySelectorAll('.category input[type="checkbox"]');
-        checkboxes.forEach((checkbox) => {
-            if (checkbox.dataset.category === initialCategory) {
-                checkbox.checked = true;
-            }
-        });
-        const filteredCars = CarListInstance.filterByCategory(initialCategory);
-        renderCars(filteredCars);
-    } else {
-        renderCars(CarListInstance.cars);
-    }
+		// Filter and render cars based on the initial category from the URL
+		if (initialCategory) {
+			const checkboxes = document.querySelectorAll('.category input[type="checkbox"]');
+			checkboxes.forEach((checkbox) => {
+				if (checkbox.dataset.category === initialCategory) {
+					checkbox.checked = true;
+				}
+			});
+			const filteredCars = CarListInstance.filterByCategory(initialCategory);
+			renderCars(filteredCars);
+		} else {
+			renderCars(CarListInstance.cars);
+		}
 
-    // Handle category filter
-    categorySection.addEventListener('change', (event) => {
-        if (event.target.type === 'checkbox') {
-            const selectedCategory = event.target.dataset.category;
+		// Handle category filter
+		categorySection.addEventListener('change', (event) => {
+			if (event.target.type === 'checkbox') {
+				const selectedCategory = event.target.dataset.category;
 
-            // Clear existing cars
-            carContainer.innerHTML = '';
+				// Clear existing cars
+				carContainer.innerHTML = '';
 
-            // Filter and render cars for the selected category
-            if (event.target.checked) {
-                const filteredCars = CarListInstance.filterByCategory(selectedCategory);
-                renderCars(filteredCars);
+				// Filter and render cars for the selected category
+				if (event.target.checked) {
+					const filteredCars = CarListInstance.filterByCategory(selectedCategory);
+					renderCars(filteredCars);
 
-                // Update the URL
-                urlParams.set('category', selectedCategory);
-            } else {
-                // If the checkbox is unchecked, render all cars
-                renderCars(CarListInstance.cars);
+					// Update the URL
+					urlParams.set('category', selectedCategory);
+				} else {
+					// If the checkbox is unchecked, render all cars
+					renderCars(CarListInstance.cars);
 
-                // Update the URL
-                urlParams.delete('category');
-            }
+					// Update the URL
+					urlParams.delete('category');
+				}
 
-            const newUrl = window.location.pathname + '?' + urlParams.toString();
-            history.pushState(null, null, newUrl);
-        }
-    });
+				const newUrl = window.location.pathname + '?' + urlParams.toString();
+				history.pushState(null, null, newUrl);
+			}
+		});
 
-    function renderCars(cars) {
-        cars.forEach((car) => {
-            const carInstance = new Car(car);
-            const carHTML = carInstance.Render();
-            carContainer.insertAdjacentHTML('beforeend', carHTML);
-        });
-    }
-});
+		function renderCars(cars) {
+			cars.forEach((car) => {
+				const carInstance = new Car(car);
+				const carHTML = carInstance.Render();
+				carContainer.insertAdjacentHTML('beforeend', carHTML);
+			});
+		}
+	});

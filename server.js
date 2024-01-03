@@ -159,11 +159,12 @@ app.get("/logout", (req, res) => {
     res.redirect("/login");
   });
 });
+
 //burtguulelt
 app.post("/register", async (req, res) => {
   try {
     let { email, name, password, confirm_password } = req.body;
-    let errors = [];
+    let errors = [];  
     console.log({
       name,
       email,
