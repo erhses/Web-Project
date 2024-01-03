@@ -3,13 +3,15 @@ class CarSaveButton extends HTMLElement {
         super();
         this.carId = this.getAttribute("carId");
         this.isClicked = JSON.parse(localStorage.getItem(`carSaveButton_${this.carId}`)) || false;
-        console.log(localStorage.getItem(`carSaveButton_${this.carId}`));
+        // console.log(localStorage.getItem(`carSaveButton_${this.carId}`));
         this.carName = this.getAttribute("carName");
         
         this.attachShadow({ mode: 'open' });
         this.#render();
         this.addEventListener('click', () => {
             this.#toggleState();
+            this.setAttribute('carId', 123);
+            this.setAttribute('carName', this.carName);
         });
     }
 
@@ -55,8 +57,8 @@ class CarSaveButton extends HTMLElement {
         //     countElement.textContent--;
         //     this.removeCarName();
         // }
-        console.log(localStorage);
-        console.log(localStorage.length);
+        // console.log(localStorage);
+        // console.log(localStorage.length);
         var count = 0;
         for (let i = 0; i < localStorage.length; i++) {
             const key = localStorage.key(i);
@@ -64,7 +66,7 @@ class CarSaveButton extends HTMLElement {
             if(value === 'true'){
                 count++;
             }
-            console.log(`Key: ${key}, Value: ${value}`);
+            // console.log(`Key: ${key}, Value: ${value}`);
         }
         countElement.textContent = count;
         
@@ -97,20 +99,30 @@ class CarSaveButton extends HTMLElement {
     }
 
     connectedCallback() {
+        console.log("Connected Callback");
         this.#updateCount(); // Initial count update
         this.#toggleState();
         this.#changeColor();
     }
 
     disconnectedCallback() {
+        console.log("Disconnected Callback");
         // Implementation
     }
 
+
+
     attributeChangedCallback(name, oldVal, newVal) {
-        // Implementation
+        console.log(`Attribute "${name}" changed from ${oldVal} to ${newVal}`);
+        
+        if (name === 'carId' || name === 'carName') {
+            // Handle changes related to carId or carName attributes
+            this.#updateName();
+        }
     }
 
     adoptedCallback() {
+        console.log("Adopted Callback");
         // Implementation
     }
 }
