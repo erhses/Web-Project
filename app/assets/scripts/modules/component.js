@@ -74,15 +74,6 @@ function addToSelected(id, title, img, body, link, lat, long) {
   }
 }
 
-function updateSelectedItemsCount() {
-  const selectedItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
-  const count = selectedItems.length;
-
-  const countBubble = document.getElementById("selectedItemsCount");
-  countBubble.textContent = count;
-  countBubble.style.display = count > 0 ? "block" : "none";
-}
-
 function redirectToSelected() {
   const selectedItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
 
