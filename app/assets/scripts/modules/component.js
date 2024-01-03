@@ -4,9 +4,8 @@ class Cards {
 
   async fetchData() {
     try {
-      const response = await fetch("app/assets/scripts/modules/cards.json");
+      const response = await fetch("app/assets/scripts/modules/cards.json"); //json file aasaa fetch hiij bga
       const jsonData = await response.json();
-      console.log(jsonData);
       return jsonData;
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -15,8 +14,9 @@ class Cards {
   }
 
   async init() {
-    const jsonData = await this.fetchData();
+    const jsonData = await this.fetchData(); //data gaa fetch hiij avah
 
+    //buh medeelelliin html beldeh
     if (jsonData) {
       const products = jsonData;
       let data = "";
@@ -32,6 +32,7 @@ class Cards {
 }
 
 class Info {
+  //popular places hesgiin card elementuud
   constructor(card) {
     this.id = card.id;
     this.img = card.img;
@@ -59,11 +60,11 @@ class Info {
 
 const cards = new Cards();
 cards.init();
-
+//sagsand nemh uildliin code
 function addToSelected(id, title, img, body, link, lat, long) {
   const selectedItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
   const isCardAlreadySelected = selectedItems.some((item) => item.id === id);
-
+  //herev sagsnd baival dahin nemeh bolomjgui
   if (!isCardAlreadySelected) {
     lat = parseFloat(lat);
     long = parseFloat(long);
@@ -74,6 +75,7 @@ function addToSelected(id, title, img, body, link, lat, long) {
   }
 }
 
+//map luu redirect hiih code
 function redirectToSelected() {
   const selectedItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
 
@@ -88,15 +90,15 @@ function redirectToSelected() {
   }
 }
 
+//map deer haragdah class
 class Selected {
-  constructor(card, showRemoveButton) {
+  constructor(card) {
     this.img = card.img;
     this.title = card.title;
     this.body = card.body;
     this.link = card.link;
     this.long = card.long;
     this.lat = card.lat;
-    this.showRemoveButton = showRemoveButton;
   }
 
   render() {
@@ -107,12 +109,13 @@ class Selected {
             <p class="text__title">${this.title}</p>
             <p class="text__body">${this.body}</p>
           </div>
-          ${this.showRemoveButton ? `<button class="card__image__button" style="background-color: red;" onclick="removeItem('${this.title}')">Remove from List</button>` : ''}
+          <button class="card__image__button" style="background-color: red;" onclick="removeItem('${this.title}')">Remove from List</button>
         </div>
     </div>`;
   }
 }
 
+//haruulj baigaa n
 function displaySelectedItems() {
   const selectedItems = JSON.parse(localStorage.getItem('selectedItems')) || [];
   const selectedItemsContainer = document.getElementById('selectedItems');
@@ -132,12 +135,12 @@ function displaySelectedItems() {
   removeAllButton.style.display = selectedItems.length > 0 ? 'block' : 'none';
 }
 
-
+//songson bugdiin clear hiih function
 function removeAll() {
   localStorage.removeItem('selectedItems');
   displaySelectedItems();
 }
-
+//buttonii ezeniig remove hiih function
 function removeItem(title) {
   const selectedItems = JSON.parse(localStorage.getItem('selectedItems')) || [];
   const updatedItems = selectedItems.filter((item) => item.title !== title);

@@ -1,4 +1,5 @@
 function initMap() {
+    //mapaa bairshuulh code
     var map = L.map('map');
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(map);
@@ -7,25 +8,26 @@ function initMap() {
 }
 
 function addMarkersAndDrawRoute(map) {
+    //markeruud zooj route zurah function
     var selectedItems = JSON.parse(localStorage.getItem('selectedItems')) || [];
-
+    //selectedItems n 2 oos ih tohioldold route zurn
     if (selectedItems.length >= 2) {
-        var routeLatLngs = selectedItems.map(function (item) {
+        var routeLatLngs = selectedItems.map(function (item) { //coordinate uudiig hadgalj avna
             return [item.long, item.lat];
         });
 
-        var bounds = L.latLngBounds(routeLatLngs);
+        var bounds = L.latLngBounds(routeLatLngs);//bairshluudaas hamaaran map init iin zoom ee haana taaruulhiig tootsooloh
 
         routeLatLngs.forEach(function (latLng, index) {
             L.marker(latLng).addTo(map)
                 .bindPopup('<b>' + selectedItems[index].title + '</b>');
-        });
+        });//marker nemeh code
 
-        map.fitBounds(bounds);
+        map.fitBounds(bounds); //map uusgehed zoom center taaruulah
 
         var waypoints = routeLatLngs.map(function (latLng) {
             return L.latLng(latLng[0], latLng[1]);
-        });
+        }); //bairshil bolgond waypoint uusgn
 
         var control = L.Routing.control({
             waypoints: waypoints,
@@ -43,6 +45,7 @@ function addMarkersAndDrawRoute(map) {
         })
         .addTo(map);
         control.hide();
+        //waypoint uudaasa hamaaaran route zurj route iin tohirgoo hiisen, daraa n control.hide() aar directions alga bolgsn
     }
 }
 

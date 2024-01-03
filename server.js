@@ -97,9 +97,11 @@ const swagger = require("swagger-ui-express");
 const passport = require("passport");
 
 const configurePassport = require("./passportConfig");
+const { has } = require("lodash");
 configurePassport(passport);
 
 const PORT = 5000;
+//api documentation heseg
 const options = {
   definition: {
     openapi: "3.0.0",
@@ -120,17 +122,21 @@ app.use(
     saveUninitialized: true,
   })
 );
+//passport ashiglan hergelgciin authen hiihed zoriulsan 
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(flash());
+//dirname
 app.use("/app", express.static("app"));
 
+//home
 app.get("/", (req, res) => {
   res.sendFile("app/index.html", { root: __dirname });
 });
+//map hseg
 app.get("/map", (req, res) => {
   res.sendFile("app/map.html", { root: __dirname });
 });
+//services hsesg
 app.get("/services", (req, res) => {
   res.sendFile("app/services.html", { root: __dirname });
 });
@@ -143,6 +149,7 @@ app.get("/profile", checkNotAuthenticated, (req, res) => {
 app.get("/register", checkAuthenticated, (req, res) => {
   res.sendFile("app/signUp.html", { root: __dirname });
 });
+//garah
 app.get("/logout", (req, res) => {
   req.logOut(function (err) {
     if (err) {
@@ -152,7 +159,7 @@ app.get("/logout", (req, res) => {
     res.redirect("/login");
   });
 });
-
+//burtguulelt
 app.post("/register", async (req, res) => {
   try {
     let { email, name, password, confirm_password } = req.body;
@@ -168,15 +175,13 @@ app.post("/register", async (req, res) => {
       [email]
     );
     if (password !== confirm_password || results.rows.length > 0) {
-      console.log("dont match");
       errors.push({ message: "Please check Email and Password" });
-      errors.forEach((error) => req.flash("error_msg", error.message));
       console.log(errors);
       res.redirect("/register");
       return;
     }
     let hashed = await bcrypt.hash(password, 10);
-    const result = await pool.query(
+    await pool.query(
       "INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING id, password",
       [name, email, hashed]
     );
@@ -185,7 +190,7 @@ app.post("/register", async (req, res) => {
     res.redirect("/register");
   }
 });
-
+//nevterc oroh
 app.post(
   "/login",
   passport.authenticate("local", {
@@ -194,14 +199,14 @@ app.post(
     failureFlash: true,
   })
 );
-
+//herelegc nevterch orson eseh
 function checkAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
     return res.redirect("/profile");
   }
   next();
 }
-
+//heregelegch nevtreegui eseh
 function checkNotAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
