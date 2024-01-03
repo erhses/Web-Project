@@ -9,7 +9,7 @@ class FooterComponent extends HTMLElement {
         <footer>
         <div class="footer">
           <div class="footer__one">
-            <h3>Санал хүсэлт үлдээх хэсэг</h3><input class="input" type="email" name="email" placeholder="Enter your email">
+            <h3>Suggestions</h3><input class="input" type="email" name="email" placeholder="Enter your email">
             <textarea name="textarea" class="textarea" cols="30" rows="10"
               placeholder="Enter your comment"></textarea><br><button type="submit">submit</button>
           </div>
