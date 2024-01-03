@@ -19,7 +19,6 @@ class HeaderComponent extends HTMLElement {
               <li><a href="profile">Profile</a></li>
               <li><a href="login">Sign In</a></li>
               <li><a href="register">Sign Up</a></li>
-              <li>Sign Out</li>
             </ul>
           </li>
         </ul>

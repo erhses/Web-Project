@@ -7,9 +7,11 @@ mediaButton.onclick = function () {
 
   mainList.classList.toggle("show_list");
   mediaButton.classList.toggle("active");
+  document.body.classList.toggle("menu-open");
   if (navigationImage.style.display === "none") {
     navigationImage.style.display = "block";
 } else {
     navigationImage.style.display = "none";
 }
 };
+
