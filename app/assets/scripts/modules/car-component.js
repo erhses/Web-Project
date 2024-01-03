@@ -15,82 +15,81 @@ import { fetchData } from "./fetchData.js";
 const jsondata = await fetchData();
 const carList = jsondata.record.carList;
 class CarComponent extends HTMLElement {
-    constructor() {
-        super();
-        // this.attachShadow({ mode: "open" });
-        // this.shadowRoot.appendChild(template.content.cloneNode(true))
-    }
-    
-    /* dark mode */
-    setupColor() {
-        const colorScheme = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-        this.setTheme(colorScheme);
-        
-        const handleColorChange = (e) => this.setTheme(e.matches ? "dark" : "light");
-        
-        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", handleColorChange);
-        handleColorChange(window.matchMedia("(prefers-color-scheme: dark)"));
-    }
-    setTheme(colorScheme) {
-        const root = document.documentElement;
-    
-        if (colorScheme === "dark") {
-            root.style.setProperty('--background-color', '#695a5a');
-            root.style.setProperty('--text-color', '#fff');
-            console.log("Color Scheme Changed to :", colorScheme);
-        } else {
-            root.style.setProperty('--background-color', '#fff');
-            root.style.setProperty('--text-color', '#000');
-            console.log("Color Scheme Changed to :", colorScheme);
-        }
-    }
-    /* dark mode ends */
-    
-    renderCars() {
-        const carContainer = document.querySelector('.car');
-        let html = '';
-        carList.forEach(car => {
-            // console.log(car);
-            html += this.#render(car);
-        });
+	constructor() {
+		super();
+		// this.attachShadow({ mode: "open" });
+		// this.shadowRoot.appendChild(template.content.cloneNode(true))
+	}
+	/* dark mode */
+	setupColor() {
+		const colorScheme =
+			window.matchMedia &&
+			window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+		this.setTheme(colorScheme);
 
-        carContainer.innerHTML = html;
-    }
-    
-    #render(car) {
-        this.id = car.id;
-        this.name = car.name;
-        this.image = car.image;
-        this.type = car.type;
-        this.seats = car.seats;
-        this.mileage = car.mileage;
-        this.fuelEfficiency = car.fuelEfficiency;
-        this.feature = car.feature;
-        this.price = {}; // Initialize price as an object
-        this.price.day = car.price.day;
-        // this.price.total = car.price.total;
-        
-        /* calculate total price */
-        const dateOneInput = document.getElementById("dateOne");
-        const dateTwoInput = document.getElementById("dateTwo");
+		const handleColorChange = (e) =>
+			this.setTheme(e.matches ? "dark" : "light");
 
-        // Get the date values from the input elements
-        const dateOne = new Date(dateOneInput.value);
-        const dateTwo = new Date(dateTwoInput.value);
+		window
+			.matchMedia("(prefers-color-scheme: dark)")
+			.addEventListener("change", handleColorChange);
+		    handleColorChange(window.matchMedia("(prefers-color-scheme: dark)"));
+	}
+	setTheme(colorScheme) {
+		const root = document.documentElement;
 
-        // Calculate the date difference in days
-        const timeDifference = dateTwo.getTime() - dateOne.getTime();
-        const daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+		if (colorScheme === "dark") {
+			root.style.setProperty("--bg-color-default", "var(--color-black-3)");
+			root.style.setProperty("--text-color-default", "var(--color-white-3)");
+			console.log("Color Scheme Changed to :", colorScheme);
+		} else {
+			root.style.setProperty("--bg-color-default", "var(--color-white-3)");
+			root.style.setProperty("--text-color-default", "var(--color-black-3)");
+			console.log("Color Scheme Changed to :", colorScheme);
+		}
+	}
+	/* dark mode ends */
 
-        // Calculate the total price for the current car
-        const totalPrice = daysDifference * this.price.day;
-        
-        /* calculate total price ends*/
-        
-        return `
+	renderCars() {
+		const carContainer = document.querySelector(".car");
+		const html = carList.map((car) => this.#render(car)).join("");
+		carContainer.innerHTML = html;
+	}
+
+	#render(car) {
+		this.id = car.id;
+		this.name = car.name;
+		this.image = car.image;
+		this.type = car.type;
+		this.seats = car.seats;
+		this.mileage = car.mileage;
+		this.fuelEfficiency = car.fuelEfficiency;
+		this.feature = car.feature;
+		this.price = {}; // Initialize price as an object
+		this.price.day = car.price.day;
+		// this.price.total = car.price.total;
+
+		/* calculate total price */
+		const dateOneInput = document.getElementById("dateOne");
+		const dateTwoInput = document.getElementById("dateTwo");
+
+		// Get the date values from the input elements
+		const dateOne = new Date(dateOneInput.value);
+		const dateTwo = new Date(dateTwoInput.value);
+
+		// Calculate the date difference in days
+		const timeDifference = dateTwo.getTime() - dateOne.getTime();
+		const daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+
+		// Calculate the total price for the current car
+		const totalPrice = daysDifference * this.price.day;
+
+		/* calculate total price ends*/
+
+		return `
 		<div class="car__card" data-category="${this.type}">
-            <h4>${this.name}</h4>
-            <img src="app/${this.image}" alt="${this.name}">
+        <ner><h4 slot="carNamee">${this.name}</h4></ner>           
+        <img src="app/${this.image}" alt="${this.name}">
             <section class="car__card__container">
                 <div class="foot">
                     <div class="sda">
@@ -116,46 +115,51 @@ class CarComponent extends HTMLElement {
                         <div class="total">$${totalPrice} total</div>
                     </div>
                     <car-save-button carId=${this.id} isClicked=${false} carName=${this.name}></car-save-button>
-                    <car-button carId=${this.id} isClicked=${false} carName=${this.name}></car-button>
+                    <car-button carId=${this.id} isClicked=${false} carName=${
+			this.name
+		}></car-button>
                     </div>
             </section>
-        </div>`;    
-    }
+        </div>`;
+	}
 
-    // Specify observed attributes for attributeChangedCallback
+	// Specify observed attributes for attributeChangedCallback
+	static get observedAttributes() {
+		return ["carId", "carName"];
+	}
+
+	connectedCallback() {
+		console.log("Connected Callback");
+		this.renderCars();
+		const searchButton = document.getElementById("sda123");
+		searchButton.addEventListener("click", () => {
+			this.renderCars();
+		});
+
+		this.setupColor();
+	}
+
+	disconnectedCallback() {
+		console.log("Disconnected Callback");
+		//implementation
+	}
     static get observedAttributes() {
-        return ['carId', 'carName'];
+        return ['carid']; // Specify the attributes to observe
     }
-    
-    connectedCallback() {
-        console.log("Connected Callback");
-        this.renderCars();
-        const searchButton = document.getElementById("sda123");
-        searchButton.addEventListener("click", () => {
-            this.renderCars();
-        });
+	attributeChangedCallback(name, oldVal, newVal) {
+		console.log(`Attribute "${name}" changed from ${oldVal} to ${newVal}`);
 
-        this.setupColor();
-    }
-
-    disconnectedCallback() {
-        console.log("Disconnected Callback");
-        //implementation
-    }
-    
-    attributeChangedCallback(name, oldVal, newVal) {
-        console.log(`Attribute "${name}" changed from ${oldVal} to ${newVal}`);
-        // Handle changes related to carId or carName attributes
-        if (name === 'carId' || name === 'carName') {
-            this.renderCars();
+        if (name === 'carid') {
+            // Handle changes to the carId attribute
+            this.carId = newVal;
+            console.log('Updated carId property:', this.carId);
         }
-    }
+	}
 
-    adoptedCallback() {
-        console.log("Adopted Callback");
-        //implementation
-    }
-
+	adoptedCallback() {
+		console.log("Adopted Callback");
+		//implementation
+	}
 }
 
-window.customElements.define('car-component', CarComponent);
+window.customElements.define("car-component", CarComponent);

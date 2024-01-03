@@ -1,5 +1,16 @@
+:root {
+    --color-white-0: #fff;
+    --color-white-3: #e0e0e0;
+    --color-black-0: #000;
+    --color-black-3: #555;
+
+    --text-color-default: var(--color-black-3);
+    --bg-color-default: var(--color-white-3);
+}
+
 .search {
-    background-color: var(--primary);
+    background-color: var(--bg-color-default);
+    color: var(--text-color-default);
     display: flex;
     align-items: center;
     opacity: 80%;
@@ -20,6 +31,20 @@
             padding: .875rem 1rem;
             text-decoration: none;
         }
+        input {
+            width: 100%;
+        }
+
+        #sda123 {
+            background-color: var(--secondary);
+            border: none;
+            border-radius: 1rem;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1em;
+            padding: 1em;
+            margin: 2em;
+        }
     }
 }
 
@@ -28,8 +53,8 @@
     flex-wrap: wrap;
     
     .car__card {
-        background-color: var(--background-color);
-        color: var(--text-color);
+        background-color: var(--bg-color-default);
+        color: var(--text-color-default);
         border: 1px solid rgb(228, 225, 222);
         border-radius: 1.25rem;
         margin: 1.875rem auto;
@@ -92,7 +117,12 @@
     flex: 5;
 }
 
-
+#menu-icon {
+    cursor: pointer;
+    font-size: 24px;
+    display: none;
+    /* Initially hidden for larger screens */
+}
 .car_filter {
     display: flex;
     flex-direction: column;
@@ -124,6 +154,37 @@
                 list-style: none;
                 padding: 0.25rem;
             }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .car_filter {
+        .category {
+            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            position: absolute;
+            top: 20px;
+            left: 110px;
+            background-color: #615b5b;
+        }
+
+        .category.show {
+            margin-top: 800px;
+            display: flex;
+        }
+
+        #menu-icon {
+            display: block;
+        }
+    }
+
+    #saved {
+        padding: 0.5px;
+
+        .subcontainer {
+            padding: 1px;
         }
     }
 }
