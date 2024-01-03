@@ -172,13 +172,7 @@ class CarList {
 		this.dataFetched = true; // Set the flag to true after fetching data
 	}
 	
-	// logCars() {
-	// 	this.cars.forEach((car) => {
-	// 		console.log(
-	// 			`${car.id}, ${car.name}, ${car.image}, ${car.type}, ${car.seats}, ${car.mileage}, ${car.fuelefficiency}, ${car.feature}, ${car.price.day}, ${car.price.total}`
-	// 		);
-	// 	});
-	// }
+
 	filterByCategory(category) {
         return this.cars.filter((car) => car.category === category);
     }
@@ -193,7 +187,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const CarListInstance = new CarList();
     await CarListInstance.FetchData();
-    CarListInstance.logCars();
 
     // Filter and render cars based on the initial category from the URL
     if (initialCategory) {

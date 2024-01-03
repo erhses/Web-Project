@@ -112,12 +112,10 @@ class CarComponent extends HTMLElement {
                 <div class="car-container">
                     <div class="price">
                         <div class="day">$${this.price.day} day</div>
-                        <div class="total">$${totalPrice} total</div>
+                        <div class="total" id="totalPrice">$${totalPrice} total</div>
                     </div>
                     <car-save-button carId=${this.id} isClicked=${false} carName=${this.name}></car-save-button>
-                    <car-button carId=${this.id} isClicked=${false} carName=${
-			this.name
-		}></car-button>
+                    <car-button carId=${this.id} isClicked=${false} carName=${this.name}></car-button>
                     </div>
             </section>
         </div>`;

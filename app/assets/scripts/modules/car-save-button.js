@@ -34,9 +34,9 @@ class CarSaveButton extends HTMLElement {
         const iconElement = this.shadowRoot.querySelector('i');
     
         if (this.isClicked) {
-            iconElement.style.color = "black";
+            iconElement.style.setProperty('color', 'black');
         } else {
-            iconElement.style.color = "red";
+            iconElement.style.setProperty('color', 'red')
         }
     }
 
