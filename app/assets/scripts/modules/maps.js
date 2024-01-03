@@ -45,6 +45,7 @@ function addMarkersAndDrawRoute(map) {
         })
         .addTo(map);
         control.hide();
+        console.log(waypoints);
         //waypoint uudaasa hamaaaran route zurj route iin tohirgoo hiisen, daraa n control.hide() aar directions alga bolgsn
     }
 }

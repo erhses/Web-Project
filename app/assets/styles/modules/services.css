@@ -1,5 +1,17 @@
+
+:root {
+    --color-white-0: #fff;
+    --color-white-3: #e0e0e0;
+    --color-black-0: #000;
+    --color-black-3: #555;
+
+    --text-color-default: var(--color-black-3);
+    --bg-color-default: var(--color-white-3);
+}
+
 .search {
-    background-color: var(--primary);
+    background-color: var(--bg-color-default);
+    color: var(--text-color-default);
     display: flex;
     align-items: center;
     opacity: 80%;
@@ -28,8 +40,8 @@
     flex-wrap: wrap;
     
     .car__card {
-        background-color: var(--background-color);
-        color: var(--text-color);
+        background-color: var(--bg-color-default);
+        color: var(--text-color-default);
         border: 1px solid rgb(228, 225, 222);
         border-radius: 1.25rem;
         margin: 1.875rem auto;

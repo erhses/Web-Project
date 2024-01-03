@@ -23,27 +23,32 @@ class CarComponent extends HTMLElement {
     
     /* dark mode */
     setupColor() {
-        const colorScheme = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-        this.setTheme(colorScheme);
-        
-        const handleColorChange = (e) => this.setTheme(e.matches ? "dark" : "light");
-        
-        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", handleColorChange);
-        handleColorChange(window.matchMedia("(prefers-color-scheme: dark)"));
-    }
-    setTheme(colorScheme) {
-        const root = document.documentElement;
-    
-        if (colorScheme === "dark") {
-            root.style.setProperty('--background-color', '#695a5a');
-            root.style.setProperty('--text-color', '#fff');
-            console.log("Color Scheme Changed to :", colorScheme);
-        } else {
-            root.style.setProperty('--background-color', '#fff');
-            root.style.setProperty('--text-color', '#000');
-            console.log("Color Scheme Changed to :", colorScheme);
-        }
-    }
+		const colorScheme =
+			window.matchMedia &&
+			window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+		this.setTheme(colorScheme);
+
+		const handleColorChange = (e) =>
+			this.setTheme(e.matches ? "dark" : "light");
+
+		window
+			.matchMedia("(prefers-color-scheme: dark)")
+			.addEventListener("change", handleColorChange);
+		    handleColorChange(window.matchMedia("(prefers-color-scheme: dark)"));
+	}
+	setTheme(colorScheme) {
+		const root = document.documentElement;
+
+		if (colorScheme === "dark") {
+			root.style.setProperty("--bg-color-default", "var(--color-black-3)");
+			root.style.setProperty("--text-color-default", "var(--color-white-3)");
+			console.log("Color Scheme Changed to :", colorScheme);
+		} else {
+			root.style.setProperty("--bg-color-default", "var(--color-white-3)");
+			root.style.setProperty("--text-color-default", "var(--color-black-3)");
+			console.log("Color Scheme Changed to :", colorScheme);
+		}
+	}
     /* dark mode ends */
     
     renderCars() {
