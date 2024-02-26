@@ -35,7 +35,7 @@ function initialize(passport) {
               return done(null, user);
             } else {
               console.log("Password is incorrect");
-              return done(null, false, { message: "Password is incorrect" });
+              return done(null, false);
             }
           });
           
@@ -56,7 +56,7 @@ function initialize(passport) {
       authenticateUser
     )
   );
-  passport.serializeUser((user, done) => done(null, user.id));
+  passport.serializeUser((user, done) => done(null, user.id));  
 
   passport.deserializeUser((id, done) => {
     pool.query(`SELECT * FROM users WHERE id = $1`, [id], (err, results) => {

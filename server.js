@@ -110,7 +110,7 @@ const options = {
       version: "1.0.0",
     },
   },
-  apis: [`${__dirname}/*.js`  ],
+  apis: [`${__dirname}/*.js`],
 };
 const spacs = swaggerjsdoc(options);
 app.use("/api-docs", swagger.serve, swagger.setup(spacs));
@@ -122,7 +122,7 @@ app.use(
     saveUninitialized: true,
   })
 );
-//passport ashiglan hergelgciin authen hiihed zoriulsan 
+//passport ashiglan hergelgciin authen hiihed zoriulsan
 app.use(passport.initialize());
 app.use(passport.session());
 //dirname
@@ -155,7 +155,6 @@ app.get("/logout", (req, res) => {
     if (err) {
       return next(err);
     }
-    req.flash("success_msg", "You have successfully logged out.");
     res.redirect("/login");
   });
 });
@@ -164,7 +163,7 @@ app.get("/logout", (req, res) => {
 app.post("/register", async (req, res) => {
   try {
     let { email, name, password, confirm_password } = req.body;
-    let errors = [];  
+    let errors = [];
     console.log({
       name,
       email,

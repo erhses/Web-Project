@@ -15,7 +15,8 @@ function addMarkersAndDrawRoute(map) {
         var routeLatLngs = selectedItems.map(function (item) { //coordinate uudiig hadgalj avna
             return [item.long, item.lat];
         });
-
+        //testing
+    console.log(L.latLng);
         var bounds = L.latLngBounds(routeLatLngs);//bairshluudaas hamaaran map init iin zoom ee haana taaruulhiig tootsooloh
 
         routeLatLngs.forEach(function (latLng, index) {
